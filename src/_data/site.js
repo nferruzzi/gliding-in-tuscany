@@ -1,11 +1,11 @@
 module.exports = {
   title: {
-    it: "Gliding in Tuscany - Aeroagriturismo e Scuola di Volo a Vela",
-    en: "Gliding in Tuscany - Aerial Farm Stay & Gliding School"
+    it: "Gliding in Tuscany - Aeroagriturismo con Volo a Vela",
+    en: "Gliding in Tuscany - Aerial Farm Stay with Gliding Activities"
   },
   description: {
-    it: "Aeroagriturismo e scuola di volo a vela in Toscana, zona Arezzo. Vivi l'esperienza unica di volare sopra le colline toscane.",
-    en: "Aerial farm stay and gliding school in Tuscany, Arezzo area. Experience the unique thrill of soaring above Tuscan hills."
+    it: "Aeroagriturismo con attività di volo a vela in Toscana, zona Arezzo. Voli introduttivi nei weekend sopra le colline toscane.",
+    en: "Aerial farm stay with gliding activities in Tuscany, Arezzo area. Weekend introductory flights above Tuscan hills."
   },
   url: "https://www.glidingintuscany.it",
   languages: ["it", "en"],

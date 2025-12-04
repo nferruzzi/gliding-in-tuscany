@@ -19,9 +19,11 @@ description: Soggiorna nel nostro agriturismo in Valdichiana. 5 appartamenti per
 <section class="section-padding bg-white">
   <div class="container-custom">
     <div class="grid md:grid-cols-2 gap-12">
-      <div class="bg-gray-200 rounded-lg h-[400px] flex items-center justify-center">
-        <p class="text-gray-500">[Immagine struttura]</p>
-      </div>
+      <img
+        src="/assets/images/t-int01.jpg"
+        alt="Podere Sant'Apollonia - Interni"
+        class="rounded-lg w-full h-[400px] object-cover shadow-md"
+      >
       <div>
         <h2 class="text-3xl font-serif font-bold text-gray-900 mb-6">
           Storia e Tradizione
@@ -38,8 +40,8 @@ description: Soggiorna nel nostro agriturismo in Valdichiana. 5 appartamenti per
             attuali proprietari ribattezzarono tutte le unità agricole con nomi di santi, stabilendo il nome attuale.
           </p>
           <p>
-            Sant'Apollonia ospita i proprietari e include l'appartamento <strong>"Picchio"</strong>, mentre
-            Santa Maria contiene gli appartamenti <strong>"Rondone"</strong> e <strong>"Falco"</strong>,
+            Sant'Apollonia ospita i proprietari e include l'appartamento <strong>Picchio</strong>, mentre
+            Santa Maria contiene gli appartamenti <strong>Rondone</strong> e <strong>Falco</strong>,
             precedentemente occupati da mezzadri fino al 1990.
           </p>
         </div>
@@ -50,93 +52,264 @@ description: Soggiorna nel nostro agriturismo in Valdichiana. 5 appartamenti per
 
 <section class="section-padding bg-gray-50">
   <div class="container-custom">
-    <h2 class="text-3xl font-serif font-bold text-gray-900 mb-12 text-center">
+    <h2 class="text-3xl font-serif font-bold text-gray-900 mb-4 text-center">
       I Nostri Appartamenti
     </h2>
-    <div class="max-w-4xl mx-auto mb-12">
-      <div class="bg-white rounded-lg shadow-md p-8">
-        <div class="text-center mb-6">
-          <p class="text-5xl font-bold text-primary-600 mb-2">5</p>
-          <p class="text-xl text-gray-700">Appartamenti Accoglienti</p>
+    <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+      5 appartamenti accoglienti, tutti bilocali al primo piano accessibili tramite loggia. Ogni appartamento
+      mantiene la semplicità rustica del casale offrendo il comfort moderno.
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      {# Rondone #}
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <div class="bg-primary-600 text-white p-4">
+          <h3 class="text-2xl font-serif font-bold">Rondone</h3>
+          <p class="text-primary-100 text-sm">3+1 posti letto</p>
         </div>
-        <div class="text-center">
-          <p class="text-5xl font-bold text-primary-600 mb-2">18</p>
-          <p class="text-xl text-gray-700">Posti Letto Totali</p>
+        <div class="p-6">
+          <img
+            src="/assets/images/t-int02.jpg"
+            alt="Appartamento Rondone"
+            class="rounded-lg h-40 w-full object-cover"
+          >
+          <p class="text-gray-600 mb-4">
+            Bilocale spazioso ideale per famiglie, con tutti i comfort moderni.
+          </p>
+          <div class="flex items-center text-sm text-gray-600">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+            Fino a 4 persone
+          </div>
+        </div>
+      </div>
+
+      {# Falco #}
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow border-2 border-primary-200">
+        <div class="bg-primary-700 text-white p-4">
+          <h3 class="text-2xl font-serif font-bold">Falco</h3>
+          <p class="text-primary-100 text-sm">2+1 posti letto • Storico</p>
+        </div>
+        <div class="p-6">
+          <img
+            src="/assets/images/t-int03.jpg"
+            alt="Appartamento Falco - Storico"
+            class="rounded-lg h-40 w-full object-cover"
+          >
+          <p class="text-gray-600 mb-4">
+            <strong>Appartamento storico</strong> che conserva l'ultima abitazione del mezzadro (occupata fino al 1990).
+            Caratterizzato da un grande camino originale e lavandino in granito. Alle pareti diplomi agricoli delle
+            imprese familiari di inizio '900.
+          </p>
+          <div class="flex items-center text-sm text-gray-600">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+            Fino a 3 persone
+          </div>
+        </div>
+      </div>
+
+      {# Sparviero #}
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <div class="bg-primary-600 text-white p-4">
+          <h3 class="text-2xl font-serif font-bold">Sparviero</h3>
+          <p class="text-primary-100 text-sm">2+2 posti letto</p>
+        </div>
+        <div class="p-6">
+          <img
+            src="/assets/images/t-int04.jpg"
+            alt="Appartamento Sparviero"
+            class="rounded-lg h-40 w-full object-cover"
+          >
+          <p class="text-gray-600 mb-4">
+            Bilocale versatile perfetto per famiglie o gruppi, con spazi confortevoli.
+          </p>
+          <div class="flex items-center text-sm text-gray-600">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+            Fino a 4 persone
+          </div>
+        </div>
+      </div>
+
+      {# Nibbio #}
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <div class="bg-primary-600 text-white p-4">
+          <h3 class="text-2xl font-serif font-bold">Nibbio</h3>
+          <p class="text-primary-100 text-sm">2+1 posti letto</p>
+        </div>
+        <div class="p-6">
+          <img
+            src="/assets/images/t-int01.jpg"
+            alt="Appartamento Nibbio"
+            class="rounded-lg h-40 w-full object-cover"
+          >
+          <p class="text-gray-600 mb-4">
+            Bilocale accogliente, ideale per coppie o piccole famiglie.
+          </p>
+          <div class="flex items-center text-sm text-gray-600">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+            Fino a 3 persone
+          </div>
+        </div>
+      </div>
+
+      {# Picchio #}
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <div class="bg-primary-600 text-white p-4">
+          <h3 class="text-2xl font-serif font-bold">Picchio</h3>
+          <p class="text-primary-100 text-sm">2+1 posti letto</p>
+        </div>
+        <div class="p-6">
+          <img
+            src="/assets/images/t-int02.jpg"
+            alt="Appartamento Picchio"
+            class="rounded-lg h-40 w-full object-cover"
+          >
+          <p class="text-gray-600 mb-4">
+            Bilocale in Sant'Apollonia, caratteristico e confortevole.
+          </p>
+          <div class="flex items-center text-sm text-gray-600">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+            Fino a 3 persone
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h3 class="text-2xl font-serif font-bold text-gray-900 mb-4">Picchio</h3>
-        <p class="text-gray-600">Appartamento caratteristico in Sant'Apollonia</p>
-      </div>
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h3 class="text-2xl font-serif font-bold text-gray-900 mb-4">Rondone</h3>
-        <p class="text-gray-600">Appartamento tradizionale in Santa Maria</p>
-      </div>
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h3 class="text-2xl font-serif font-bold text-gray-900 mb-4">Falco</h3>
-        <p class="text-gray-600">Appartamento panoramico in Santa Maria</p>
-      </div>
+    <div class="bg-primary-50 rounded-lg p-6 mb-8">
+      <h3 class="text-xl font-serif font-bold text-gray-900 mb-3">Curiosità sui Nomi</h3>
+      <p class="text-gray-700">
+        I nomi degli appartamenti rendono omaggio agli aerei progettati dall'ingegnere <strong>Stelio Frati</strong>,
+        considerato il "Ferrari dell'aviazione" per l'eccellenza dei suoi progetti aeronautici.
+      </p>
     </div>
   </div>
 </section>
 
 <section class="section-padding bg-white">
   <div class="container-custom">
-    <h2 class="text-3xl font-serif font-bold text-gray-900 mb-12 text-center">
-      Servizi e Comfort
+    <h2 class="text-3xl font-serif font-bold text-gray-900 mb-8 text-center">
+      Comfort e Dotazioni
     </h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+    <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+      Tutti gli appartamenti sono stati ristrutturati mantenendo la semplicità rustica del casale
+      e offrendo il massimo comfort moderno.
+    </p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
       <div class="flex items-start space-x-3">
         <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
         </svg>
-        <span class="text-gray-700">Cucina attrezzata</span>
+        <div>
+          <h4 class="font-bold text-gray-900">Tetto coibentato</h4>
+          <p class="text-sm text-gray-600">Isolamento termico efficiente</p>
+        </div>
       </div>
       <div class="flex items-start space-x-3">
         <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
         </svg>
-        <span class="text-gray-700">Vista panoramica</span>
+        <div>
+          <h4 class="font-bold text-gray-900">Infissi nuovi</h4>
+          <p class="text-sm text-gray-600">Finestre moderne e isolanti</p>
+        </div>
       </div>
       <div class="flex items-start space-x-3">
         <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
         </svg>
-        <span class="text-gray-700">Parcheggio privato</span>
+        <div>
+          <h4 class="font-bold text-gray-900">Riscaldamento autonomo</h4>
+          <p class="text-sm text-gray-600">Caldaie ad accensione elettronica</p>
+        </div>
       </div>
       <div class="flex items-start space-x-3">
         <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
         </svg>
-        <span class="text-gray-700">Giardino</span>
+        <div>
+          <h4 class="font-bold text-gray-900">TV satellitare</h4>
+          <p class="text-sm text-gray-600">In ogni appartamento</p>
+        </div>
       </div>
       <div class="flex items-start space-x-3">
         <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
         </svg>
-        <span class="text-gray-700">Tranquillità</span>
+        <div>
+          <h4 class="font-bold text-gray-900">Cucina attrezzata</h4>
+          <p class="text-sm text-gray-600">Completamente equipaggiata</p>
+        </div>
       </div>
       <div class="flex items-start space-x-3">
         <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
         </svg>
-        <span class="text-gray-700">Aria condizionata</span>
+        <div>
+          <h4 class="font-bold text-gray-900">Bagno con doccia</h4>
+          <p class="text-sm text-gray-600">Moderno e funzionale</p>
+        </div>
       </div>
       <div class="flex items-start space-x-3">
         <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
         </svg>
-        <span class="text-gray-700">Wi-Fi</span>
+        <div>
+          <h4 class="font-bold text-gray-900">Accesso tramite loggia</h4>
+          <p class="text-sm text-gray-600">Primo piano</p>
+        </div>
       </div>
       <div class="flex items-start space-x-3">
         <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
         </svg>
-        <span class="text-gray-700">Campo di volo</span>
+        <div>
+          <h4 class="font-bold text-gray-900">Bilocali</h4>
+          <p class="text-sm text-gray-600">Tutti gli appartamenti</p>
+        </div>
       </div>
+      <div class="flex items-start space-x-3">
+        <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+        <div>
+          <h4 class="font-bold text-gray-900">Vista panoramica</h4>
+          <p class="text-sm text-gray-600">Sulle colline di Cortona</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding bg-gray-50">
+  <div class="container-custom">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl font-serif font-bold text-gray-900 mb-6">
+          La Piscina
+        </h2>
+        <p class="text-gray-700 mb-4">
+          La nostra piscina ha un design unico e particolare: mimetizzata come un laghetto di irrigazione,
+          vista dall'alto rivela un disegno sorprendente.
+        </p>
+        <p class="text-gray-700">
+          <strong>Dall'alto compare un aereo</strong>, precisamente un Falco in volo verso il sud,
+          un elemento giocoso che richiama la passione per il volo che caratterizza l'aeroagriturismo.
+        </p>
+      </div>
+      <img
+        src="/assets/images/t-piscina.jpg"
+        alt="Piscina con design aereo dall'alto"
+        class="rounded-lg h-[350px] w-full object-cover shadow-md"
+      >
     </div>
   </div>
 </section>
