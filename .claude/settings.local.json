@@ -15,7 +15,13 @@
       "Bash(ls:*)",
       "Bash(chmod:*)",
       "Bash(./upscale-images.sh:*)",
-      "Bash(./process-photos.sh:*)"
+      "Bash(./process-photos.sh:*)",
+      "Bash(identify -verbose:*)",
+      "Bash(for img in src/assets/images/*.jpg)",
+      "Bash(do identify -verbose $img)",
+      "Bash(done)",
+      "Bash(do python3 -c \"from PIL import Image; import os; img_path=''$img''; i=Image.open(img_path); ratio=i.width/i.height; print(f''{os.path.basename(img_path)}: {i.width}x{i.height} ({ratio:.2f})'') \")",
+      "Bash(identify -format \"%f: %wx%h\\n\":*)"
     ],
     "deny": [],
     "ask": []
