@@ -1,0 +1,59 @@
+<footer class="bg-gray-900 text-gray-300">
+  <div class="container-custom section-padding">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {# About #}
+      <div>
+        <h3 class="text-white text-lg font-serif font-bold mb-4">
+          Gliding in Tuscany
+        </h3>
+        <p class="text-sm leading-relaxed">
+          {{ site.description[lang] }}
+        </p>
+      </div>
+
+      {# Quick Links #}
+      <div>
+        <h3 class="text-white text-lg font-serif font-bold mb-4">
+          {{ translations[lang].home }}
+        </h3>
+        <ul class="space-y-2">
+          {% for item in navigation[lang] %}
+          <li>
+            <a href="{{ item.url }}" class="text-sm hover:text-white transition-colors">
+              {{ item.label }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {# Contact Info #}
+      <div>
+        <h3 class="text-white text-lg font-serif font-bold mb-4">
+          {{ translations[lang].contact }}
+        </h3>
+        <ul class="space-y-2 text-sm">
+          <li class="flex items-start">
+            <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span>Arezzo, Toscana, Italia</span>
+          </li>
+          <li class="flex items-center">
+            <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            <a href="mailto:info@glidingintuscany.it" class="hover:text-white transition-colors">
+              info@glidingintuscany.it
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+      <p>&copy; 2025 Gliding in Tuscany. {{ translations[lang].rights }}.</p>
+    </div>
+  </div>
+</footer>
