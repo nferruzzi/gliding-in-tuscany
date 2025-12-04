@@ -1,7 +1,7 @@
 module.exports = {
   it: {
     home: "Home",
-    flightSchool: "Scuola di Volo",
+    flightSchool: "Attività di Volo",
     farmStay: "Agriturismo",
     gallery: "Galleria",
     contact: "Contatti",
@@ -19,7 +19,7 @@ module.exports = {
   },
   en: {
     home: "Home",
-    flightSchool: "Flight School",
+    flightSchool: "Flight Activities",
     farmStay: "Farm Stay",
     gallery: "Gallery",
     contact: "Contact",
