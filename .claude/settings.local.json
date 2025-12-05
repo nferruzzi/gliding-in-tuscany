@@ -28,7 +28,13 @@
       "WebFetch(domain:mugellogliding.aero)",
       "Bash(find:*)",
       "Bash(ffmpeg:*)",
-      "Bash(ffprobe:*)"
+      "Bash(ffprobe:*)",
+      "Bash(for:*)",
+      "Bash(do basename=\"$video%.*\" output=\"/Volumes/Lexar/src/montecchio/src/assets/videos/$basename.webm\" echo \"Converting $video to WebM 480p...\" ffmpeg -i \"$video\" -vf \"scale=-2:480\" -c:v libvpx-vp9 -crf 35 -b:v 0 -c:a libopus -b:a 64k \"$output\" -y)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(git fetch:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []
