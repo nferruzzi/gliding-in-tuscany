@@ -27,7 +27,8 @@
       "WebSearch",
       "WebFetch(domain:mugellogliding.aero)",
       "Bash(find:*)",
-      "Bash(ffmpeg:*)"
+      "Bash(ffmpeg:*)",
+      "Bash(ffprobe:*)"
     ],
     "deny": [],
     "ask": []

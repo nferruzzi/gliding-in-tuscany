@@ -28,58 +28,8 @@
   <link rel="alternate" hreflang="{{ language }}" href="{{ site.url }}/{{ language }}{{ page.url | replace(lang, '') }}">
   {% endfor %}
 
-  <style>
-    /* Video background that scrolls with page */
-    .video-background-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-    }
-
-    .video-background-container video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Overlay to darken video and improve text readability */
-    .video-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(12, 74, 110, 0.85), rgba(3, 105, 161, 0.75), rgba(2, 132, 199, 0.65));
-      z-index: 1;
-    }
-
-    /* Ensure content is above video */
-    body {
-      position: relative;
-    }
-
-    main {
-      position: relative;
-      z-index: 2;
-    }
-  </style>
 </head>
 <body class="flex flex-col min-h-screen relative">
-  {# Video background #}
-  <div class="video-background-container">
-    <video autoplay muted loop playsinline>
-      <source src="/assets/videos/{{ videoFile }}" type="video/mp4">
-    </video>
-    <div class="video-overlay"></div>
-  </div>
-
   {% include "header.njk" %}
 
   <main class="flex-grow">

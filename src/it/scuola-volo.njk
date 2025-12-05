@@ -3,21 +3,28 @@ layout: flight-school.njk
 lang: it
 title: Attività di Volo a Vela - Gliding in Tuscany
 description: Voli a vela nei weekend sopra le colline toscane. Voli introduttivi con piloti esperti, lancio col verricello, Falco F8L.
-videoFile: lancio-verricello-pista.mp4
+videoFile: lancio-verricello-pista-small.mp4
 ---
 
-<section class="section-padding bg-white/90 backdrop-blur-sm/90 backdrop-blur-sm">
-  <div class="container-custom">
-    <h1 class="text-5xl font-serif font-bold text-gray-900 mb-6">
-      Attività di Volo a Vela
-    </h1>
-    <p class="text-xl text-gray-700 max-w-3xl">
-      Vivi l'emozione del volo a vela sopra le splendide colline toscane durante i weekend e i giorni festivi
-    </p>
+<section class="relative overflow-hidden" style="min-height: 70vh;">
+  <video autoplay muted loop playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover">
+    <source src="/assets/videos/lancio-verricello-pista.webm" type="video/webm">
+    <source src="/assets/videos/lancio-verricello-pista-small.mp4" type="video/mp4">
+  </video>
+  <div class="absolute inset-0 bg-gradient-to-r from-primary-900/70 via-primary-800/50 to-primary-700/30"></div>
+  <div class="relative container-custom flex items-center" style="min-height: 70vh;">
+    <div class="max-w-3xl text-white py-20">
+      <h1 class="text-5xl font-serif font-bold mb-6" style="text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.8);">
+        Attività di Volo a Vela
+      </h1>
+      <p class="text-xl max-w-3xl" style="text-shadow: 0 2px 6px rgba(0,0,0,0.9), 0 0 15px rgba(0,0,0,0.7);">
+        Vivi l'emozione del volo a vela sopra le splendide colline toscane durante i weekend e i giorni festivi
+      </p>
+    </div>
   </div>
 </section>
 
-<section class="section-padding bg-white/90 backdrop-blur-sm">
+<section class="section-padding bg-white">
   <div class="container-custom">
     <div class="grid md:grid-cols-2 gap-12">
       <div>
@@ -49,7 +56,7 @@ videoFile: lancio-verricello-pista.mp4
   </div>
 </section>
 
-<section class="section-padding bg-white/90 backdrop-blur-sm/85 backdrop-blur-sm">
+<section class="section-padding bg-gray-50">
   <div class="container-custom">
     <h2 class="text-3xl font-serif font-bold text-gray-900 mb-8 text-center">
       Aeroclub e Flotta
@@ -63,7 +70,7 @@ videoFile: lancio-verricello-pista.mp4
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 mb-8">
-        <div class="bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-md">
+        <div class="bg-white rounded-lg p-6 shadow-md">
           <h3 class="text-2xl font-serif font-bold text-primary-700 mb-4">Volo a Vela Montecchio</h3>
           <ul class="space-y-3 text-gray-700">
             <li class="flex items-start">
@@ -84,7 +91,7 @@ videoFile: lancio-verricello-pista.mp4
           </ul>
         </div>
 
-        <div class="bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-md">
+        <div class="bg-white rounded-lg p-6 shadow-md">
           <h3 class="text-2xl font-serif font-bold text-primary-700 mb-4">Aeroclub Volovelistico del Mugello</h3>
           <ul class="space-y-3 text-gray-700">
             <li class="flex items-start">
@@ -132,13 +139,13 @@ videoFile: lancio-verricello-pista.mp4
   </div>
 </section>
 
-<section class="section-padding bg-white/90 backdrop-blur-sm">
+<section class="section-padding bg-white">
   <div class="container-custom">
     <h2 class="text-3xl font-serif font-bold text-gray-900 mb-8 text-center">
       Specifiche del Campo di Volo
     </h2>
     <div class="max-w-3xl mx-auto">
-      <div class="bg-white/90 backdrop-blur-sm/85 backdrop-blur-sm rounded-lg p-8">
+      <div class="bg-gray-50 rounded-lg p-8">
         <div class="grid md:grid-cols-2 gap-6">
           <div class="space-y-4">
             <div>
@@ -182,7 +189,7 @@ videoFile: lancio-verricello-pista.mp4
   </div>
 </section>
 
-<section class="section-padding bg-white/90 backdrop-blur-sm">
+<section class="section-padding bg-white">
   <div class="container-custom">
     <h2 class="text-3xl font-serif font-bold text-gray-900 mb-12 text-center">
       Le Nostre Attività
@@ -257,7 +264,7 @@ videoFile: lancio-verricello-pista.mp4
   </div>
 </section>
 
-<section class="section-padding bg-white/90 backdrop-blur-sm/85 backdrop-blur-sm">
+<section class="section-padding bg-gray-50">
   <div class="container-custom">
     <h2 class="text-3xl font-serif font-bold text-gray-900 mb-8">
       Storia e Patrimonio Aeronautico
@@ -306,7 +313,7 @@ videoFile: lancio-verricello-pista.mp4
       <p class="text-lg mb-8 text-white" style="text-shadow: 0 2px 6px rgba(0,0,0,0.9), 0 0 15px rgba(0,0,0,0.7);">
         Contattaci per prenotare il tuo volo introduttivo o per informazioni sulle sessioni di addestramento.
       </p>
-      <a href="/it/contatti/" class="btn-primary bg-white/90 backdrop-blur-sm hover:bg-gray-100 text-primary-700">
+      <a href="/it/contatti/" class="btn-primary bg-white hover:bg-gray-100 text-primary-700">
         Contattaci
       </a>
     </div>
