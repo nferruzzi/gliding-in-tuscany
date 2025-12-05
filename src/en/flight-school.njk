@@ -7,7 +7,7 @@ videoFile: lancio-verricello-pista-small.mp4
 ---
 
 <section class="relative overflow-hidden" style="min-height: 70vh;">
-  <video autoplay muted loop playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover">
+  <video id="heroVideo" autoplay muted playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover">
     <source src="/assets/videos/lancio-verricello-pista.webm" type="video/webm">
     <source src="/assets/videos/lancio-verricello-pista-small.mp4" type="video/mp4">
   </video>
@@ -22,6 +22,25 @@ videoFile: lancio-verricello-pista-small.mp4
       </p>
     </div>
   </div>
+
+  <script>
+    (function() {
+      const videos = [
+        '/assets/videos/lancio-verricello-pista.webm',
+        '/assets/videos/proprietario-decollo-traino.webm',
+        '/assets/videos/decollo-traino.webm',
+        '/assets/videos/lancio-verricello.webm'
+      ];
+      let currentVideoIndex = 0;
+      const videoElement = document.getElementById('heroVideo');
+
+      videoElement.addEventListener('ended', function() {
+        currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+        videoElement.src = videos[currentVideoIndex];
+        videoElement.play();
+      });
+    })();
+  </script>
 </section>
 
 <section class="section-padding bg-white/90 backdrop-blur-sm">
