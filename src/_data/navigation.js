@@ -12,5 +12,12 @@ module.exports = {
     { label: "Farm Stay", url: "/en/farm-stay/" },
     { label: "Gallery", url: "/en/gallery/" },
     { label: "Contact", url: "/en/contact/" }
+  ],
+  de: [
+    { label: "Startseite", url: "/de/" },
+    { label: "Segelflug", url: "/de/segelflug/" },
+    { label: "Agriturismo", url: "/de/agriturismo/" },
+    { label: "Galerie", url: "/de/galerie/" },
+    { label: "Kontakt", url: "/de/kontakt/" }
   ]
 };

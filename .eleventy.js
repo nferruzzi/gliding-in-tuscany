@@ -20,6 +20,10 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getAll().filter(item => item.data.lang === "en");
   });
 
+  eleventyConfig.addCollection("de", function(collectionApi) {
+    return collectionApi.getAll().filter(item => item.data.lang === "de");
+  });
+
   return {
     dir: {
       input: "src",

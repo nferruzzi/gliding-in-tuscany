@@ -34,5 +34,23 @@ module.exports = {
     followUs: "Follow us",
     rights: "All rights reserved",
     switchLanguage: "Passa all'Italiano"
+  },
+  de: {
+    home: "Startseite",
+    flightSchool: "Segelflug",
+    farmStay: "Agriturismo",
+    gallery: "Galerie",
+    contact: "Kontakt",
+    learnMore: "Mehr erfahren",
+    sendMessage: "Nachricht senden",
+    yourName: "Ihr Name",
+    yourEmail: "Ihre E-Mail",
+    yourMessage: "Ihre Nachricht",
+    phone: "Telefon",
+    email: "E-Mail",
+    address: "Adresse",
+    followUs: "Folgen Sie uns",
+    rights: "Alle Rechte vorbehalten",
+    switchLanguage: "Cambia in Italiano"
   }
 };

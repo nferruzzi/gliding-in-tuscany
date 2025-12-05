@@ -17,11 +17,34 @@
         </a>
         {% endfor %}
 
-        {# Language Switcher #}
-        <a href="/{% if lang == 'it' %}en{% else %}it{% endif %}/"
-           class="text-sm text-gray-600 hover:text-primary-600 transition-colors border-l pl-6">
-          {% if lang == 'it' %}EN{% else %}IT{% endif %}
-        </a>
+        {# Language Switcher with Flags #}
+        <div class="relative border-l pl-6 group">
+          <button class="flex items-center space-x-2 text-gray-600 hover:text-primary-600 transition-colors">
+            <span class="text-xl">
+              {% if lang == 'it' %}🇮🇹{% elif lang == 'en' %}🇬🇧{% elif lang == 'de' %}🇩🇪{% endif %}
+            </span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="hidden group-hover:block absolute right-0 mt-2 py-2 w-32 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
+            <a href="/it/{% if page.url contains 'scuola-volo' or page.url contains 'flight-school' or page.url contains 'segelflug' %}scuola-volo/{% elif page.url contains 'agriturismo' or page.url contains 'farm-stay' %}agriturismo/{% elif page.url contains 'galleria' or page.url contains 'gallery' or page.url contains 'galerie' %}galleria/{% elif page.url contains 'contatti' or page.url contains 'contact' or page.url contains 'kontakt' %}contatti/{% endif %}"
+               class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors {% if lang == 'it' %}bg-primary-50 text-primary-600{% endif %}">
+              <span class="text-lg">🇮🇹</span>
+              <span>Italiano</span>
+            </a>
+            <a href="/en/{% if page.url contains 'scuola-volo' or page.url contains 'flight-school' or page.url contains 'segelflug' %}flight-school/{% elif page.url contains 'agriturismo' or page.url contains 'farm-stay' %}farm-stay/{% elif page.url contains 'galleria' or page.url contains 'gallery' or page.url contains 'galerie' %}gallery/{% elif page.url contains 'contatti' or page.url contains 'contact' or page.url contains 'kontakt' %}contact/{% endif %}"
+               class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors {% if lang == 'en' %}bg-primary-50 text-primary-600{% endif %}">
+              <span class="text-lg">🇬🇧</span>
+              <span>English</span>
+            </a>
+            <a href="/de/{% if page.url contains 'scuola-volo' or page.url contains 'flight-school' or page.url contains 'segelflug' %}segelflug/{% elif page.url contains 'agriturismo' or page.url contains 'farm-stay' %}agriturismo/{% elif page.url contains 'galleria' or page.url contains 'gallery' or page.url contains 'galerie' %}galerie/{% elif page.url contains 'contatti' or page.url contains 'contact' or page.url contains 'kontakt' %}kontakt/{% endif %}"
+               class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors {% if lang == 'de' %}bg-primary-50 text-primary-600{% endif %}">
+              <span class="text-lg">🇩🇪</span>
+              <span>Deutsch</span>
+            </a>
+          </div>
+        </div>
       </div>
 
       {# Mobile Menu Button #}
@@ -40,10 +63,24 @@
         {{ item.label }}
       </a>
       {% endfor %}
-      <a href="/{% if lang == 'it' %}en{% else %}it{% endif %}/"
-         class="block py-2 text-gray-600 hover:text-primary-600 transition-colors border-t mt-2 pt-3">
-        {% if lang == 'it' %}English{% else %}Italiano{% endif %}
-      </a>
+      <div class="border-t mt-2 pt-3">
+        <div class="text-xs text-gray-500 mb-2 px-2">{{ translations[lang].switchLanguage or 'Language' }}</div>
+        <a href="/it/{% if page.url contains 'scuola-volo' or page.url contains 'flight-school' or page.url contains 'segelflug' %}scuola-volo/{% elif page.url contains 'agriturismo' or page.url contains 'farm-stay' %}agriturismo/{% elif page.url contains 'galleria' or page.url contains 'gallery' or page.url contains 'galerie' %}galleria/{% elif page.url contains 'contatti' or page.url contains 'contact' or page.url contains 'kontakt' %}contatti/{% endif %}"
+           class="flex items-center space-x-2 py-2 text-gray-700 hover:text-primary-600 transition-colors {% if lang == 'it' %}text-primary-600 font-semibold{% endif %}">
+          <span class="text-lg">🇮🇹</span>
+          <span>Italiano</span>
+        </a>
+        <a href="/en/{% if page.url contains 'scuola-volo' or page.url contains 'flight-school' or page.url contains 'segelflug' %}flight-school/{% elif page.url contains 'agriturismo' or page.url contains 'farm-stay' %}farm-stay/{% elif page.url contains 'galleria' or page.url contains 'gallery' or page.url contains 'galerie' %}gallery/{% elif page.url contains 'contatti' or page.url contains 'contact' or page.url contains 'kontakt' %}contact/{% endif %}"
+           class="flex items-center space-x-2 py-2 text-gray-700 hover:text-primary-600 transition-colors {% if lang == 'en' %}text-primary-600 font-semibold{% endif %}">
+          <span class="text-lg">🇬🇧</span>
+          <span>English</span>
+        </a>
+        <a href="/de/{% if page.url contains 'scuola-volo' or page.url contains 'flight-school' or page.url contains 'segelflug' %}segelflug/{% elif page.url contains 'agriturismo' or page.url contains 'farm-stay' %}agriturismo/{% elif page.url contains 'galleria' or page.url contains 'gallery' or page.url contains 'galerie' %}galerie/{% elif page.url contains 'contatti' or page.url contains 'contact' or page.url contains 'kontakt' %}kontakt/{% endif %}"
+           class="flex items-center space-x-2 py-2 text-gray-700 hover:text-primary-600 transition-colors {% if lang == 'de' %}text-primary-600 font-semibold{% endif %}">
+          <span class="text-lg">🇩🇪</span>
+          <span>Deutsch</span>
+        </a>
+      </div>
     </div>
   </nav>
 </header>
