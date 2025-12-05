@@ -24,7 +24,8 @@
       "Bash(identify -format \"%f: %wx%h\\n\":*)",
       "Bash(identify -format:*)",
       "Bash(pkill:*)",
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:mugellogliding.aero)"
     ],
     "deny": [],
     "ask": []
