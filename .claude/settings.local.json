@@ -25,7 +25,9 @@
       "Bash(identify -format:*)",
       "Bash(pkill:*)",
       "WebSearch",
-      "WebFetch(domain:mugellogliding.aero)"
+      "WebFetch(domain:mugellogliding.aero)",
+      "Bash(find:*)",
+      "Bash(ffmpeg:*)"
     ],
     "deny": [],
     "ask": []
