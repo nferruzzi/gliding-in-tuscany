@@ -18,6 +18,16 @@
         {% endfor %}
 
         {# Language Switcher with Flags #}
+        {% set pagePath = "" %}
+        {% if 'scuola-volo' in page.url or 'flight-school' in page.url or 'segelflug' in page.url %}
+          {% set pagePath = "flight" %}
+        {% elif 'agriturismo' in page.url or 'farm-stay' in page.url %}
+          {% set pagePath = "farm" %}
+        {% elif 'galleria' in page.url or 'gallery' in page.url or 'galerie' in page.url %}
+          {% set pagePath = "gallery" %}
+        {% elif 'contatti' in page.url or 'contact' in page.url or 'kontakt' in page.url %}
+          {% set pagePath = "contact" %}
+        {% endif %}
         <div class="relative border-l pl-6 group">
           <button class="flex items-center space-x-2 text-gray-600 hover:text-primary-600 transition-colors">
             <span class="text-xl">
@@ -28,17 +38,17 @@
             </svg>
           </button>
           <div class="hidden group-hover:block absolute right-0 mt-2 py-2 w-32 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
-            <a href="/it/{% if page.url contains 'scuola-volo' or page.url contains 'flight-school' or page.url contains 'segelflug' %}scuola-volo/{% elif page.url contains 'agriturismo' or page.url contains 'farm-stay' %}agriturismo/{% elif page.url contains 'galleria' or page.url contains 'gallery' or page.url contains 'galerie' %}galleria/{% elif page.url contains 'contatti' or page.url contains 'contact' or page.url contains 'kontakt' %}contatti/{% endif %}"
+            <a href="/it/{% if pagePath == 'flight' %}scuola-volo/{% elif pagePath == 'farm' %}agriturismo/{% elif pagePath == 'gallery' %}galleria/{% elif pagePath == 'contact' %}contatti/{% endif %}"
                class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors {% if lang == 'it' %}bg-primary-50 text-primary-600{% endif %}">
               <span class="text-lg">🇮🇹</span>
               <span>Italiano</span>
             </a>
-            <a href="/en/{% if page.url contains 'scuola-volo' or page.url contains 'flight-school' or page.url contains 'segelflug' %}flight-school/{% elif page.url contains 'agriturismo' or page.url contains 'farm-stay' %}farm-stay/{% elif page.url contains 'galleria' or page.url contains 'gallery' or page.url contains 'galerie' %}gallery/{% elif page.url contains 'contatti' or page.url contains 'contact' or page.url contains 'kontakt' %}contact/{% endif %}"
+            <a href="/en/{% if pagePath == 'flight' %}flight-school/{% elif pagePath == 'farm' %}farm-stay/{% elif pagePath == 'gallery' %}gallery/{% elif pagePath == 'contact' %}contact/{% endif %}"
                class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors {% if lang == 'en' %}bg-primary-50 text-primary-600{% endif %}">
               <span class="text-lg">🇬🇧</span>
               <span>English</span>
             </a>
-            <a href="/de/{% if page.url contains 'scuola-volo' or page.url contains 'flight-school' or page.url contains 'segelflug' %}segelflug/{% elif page.url contains 'agriturismo' or page.url contains 'farm-stay' %}agriturismo/{% elif page.url contains 'galleria' or page.url contains 'gallery' or page.url contains 'galerie' %}galerie/{% elif page.url contains 'contatti' or page.url contains 'contact' or page.url contains 'kontakt' %}kontakt/{% endif %}"
+            <a href="/de/{% if pagePath == 'flight' %}segelflug/{% elif pagePath == 'farm' %}agriturismo/{% elif pagePath == 'gallery' %}galerie/{% elif pagePath == 'contact' %}kontakt/{% endif %}"
                class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors {% if lang == 'de' %}bg-primary-50 text-primary-600{% endif %}">
               <span class="text-lg">🇩🇪</span>
               <span>Deutsch</span>
@@ -64,18 +74,18 @@
       </a>
       {% endfor %}
       <div class="border-t mt-2 pt-3">
-        <div class="text-xs text-gray-500 mb-2 px-2">{{ translations[lang].switchLanguage or 'Language' }}</div>
-        <a href="/it/{% if page.url contains 'scuola-volo' or page.url contains 'flight-school' or page.url contains 'segelflug' %}scuola-volo/{% elif page.url contains 'agriturismo' or page.url contains 'farm-stay' %}agriturismo/{% elif page.url contains 'galleria' or page.url contains 'gallery' or page.url contains 'galerie' %}galleria/{% elif page.url contains 'contatti' or page.url contains 'contact' or page.url contains 'kontakt' %}contatti/{% endif %}"
+        <div class="text-xs text-gray-500 mb-2 px-2">Language</div>
+        <a href="/it/{% if pagePath == 'flight' %}scuola-volo/{% elif pagePath == 'farm' %}agriturismo/{% elif pagePath == 'gallery' %}galleria/{% elif pagePath == 'contact' %}contatti/{% endif %}"
            class="flex items-center space-x-2 py-2 text-gray-700 hover:text-primary-600 transition-colors {% if lang == 'it' %}text-primary-600 font-semibold{% endif %}">
           <span class="text-lg">🇮🇹</span>
           <span>Italiano</span>
         </a>
-        <a href="/en/{% if page.url contains 'scuola-volo' or page.url contains 'flight-school' or page.url contains 'segelflug' %}flight-school/{% elif page.url contains 'agriturismo' or page.url contains 'farm-stay' %}farm-stay/{% elif page.url contains 'galleria' or page.url contains 'gallery' or page.url contains 'galerie' %}gallery/{% elif page.url contains 'contatti' or page.url contains 'contact' or page.url contains 'kontakt' %}contact/{% endif %}"
+        <a href="/en/{% if pagePath == 'flight' %}flight-school/{% elif pagePath == 'farm' %}farm-stay/{% elif pagePath == 'gallery' %}gallery/{% elif pagePath == 'contact' %}contact/{% endif %}"
            class="flex items-center space-x-2 py-2 text-gray-700 hover:text-primary-600 transition-colors {% if lang == 'en' %}text-primary-600 font-semibold{% endif %}">
           <span class="text-lg">🇬🇧</span>
           <span>English</span>
         </a>
-        <a href="/de/{% if page.url contains 'scuola-volo' or page.url contains 'flight-school' or page.url contains 'segelflug' %}segelflug/{% elif page.url contains 'agriturismo' or page.url contains 'farm-stay' %}agriturismo/{% elif page.url contains 'galleria' or page.url contains 'gallery' or page.url contains 'galerie' %}galerie/{% elif page.url contains 'contatti' or page.url contains 'contact' or page.url contains 'kontakt' %}kontakt/{% endif %}"
+        <a href="/de/{% if pagePath == 'flight' %}segelflug/{% elif pagePath == 'farm' %}agriturismo/{% elif pagePath == 'gallery' %}galerie/{% elif pagePath == 'contact' %}kontakt/{% endif %}"
            class="flex items-center space-x-2 py-2 text-gray-700 hover:text-primary-600 transition-colors {% if lang == 'de' %}text-primary-600 font-semibold{% endif %}">
           <span class="text-lg">🇩🇪</span>
           <span>Deutsch</span>
