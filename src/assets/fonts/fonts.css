@@ -1,0 +1,62 @@
+/* Inter Font - Self-hosted */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/fonts/Inter-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/fonts/Inter-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/Inter-Bold.woff2') format('woff2');
+}
+
+/* Font Awesome 6 Free - Solid - Self-hosted */
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url('/assets/fonts/fa-solid-900.woff2') format('woff2');
+}
+
+.fa-solid,
+.fas {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  display: inline-block;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Icons used in the site */
+.fa-circle-info::before { content: "\f05a"; }
+.fa-users::before { content: "\f0c0"; }
+.fa-person-biking::before { content: "\f84a"; }
+.fa-water::before { content: "\f773"; }
+.fa-mountain-city::before { content: "\e52e"; }
+.fa-martini-glass-citrus::before { content: "\f561"; }
