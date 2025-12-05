@@ -2,28 +2,212 @@
 layout: base.njk
 lang: de
 title: Galerie - Gliding in Tuscany
+description: Entdecken Sie die Bilder und Videos unseres Agriturismo und der Segelflugaktivitäten in der Toskana.
 ---
 
+<section class="section-padding bg-gradient-to-br from-primary-50 to-blue-50">
+  <div class="container-custom">
+    <h1 class="text-5xl font-serif font-bold text-gray-900 mb-6">
+      Foto- und Videogalerie
+    </h1>
+    <p class="text-xl text-gray-700 max-w-3xl">
+      Erleben Sie vorab das Segelflugerlebnis und die Schönheit unseres Agroflugplatzes
+    </p>
+  </div>
+</section>
+
 <section class="section-padding bg-white">
-  <div class="container-custom text-center">
-    <div class="max-w-2xl mx-auto">
-      <h1 class="text-4xl font-serif font-bold text-gray-900 mb-6">
-        Galerie
-      </h1>
-      <p class="text-xl text-gray-700 mb-8">
-        Diese Seite ist derzeit nur auf Italienisch verfügbar.
-      </p>
-      <p class="text-lg text-gray-600 mb-8">
-        This page is currently only available in Italian.
-      </p>
-      <div class="flex flex-wrap gap-4 justify-center">
-        <a href="/it/galleria/" class="btn-primary">
-          Zur italienischen Version
-        </a>
-        <a href="/de/" class="btn-secondary">
-          Zurück zur Startseite
-        </a>
+  <div class="container-custom">
+    {# Attività di Volo #}
+    <div class="mb-16">
+      <h2 class="text-3xl font-serif font-bold text-gray-900 mb-8">✈️ Flugaktivitäten</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all">
+          <img
+            src="/assets/images/volo-activity-01.jpg"
+            alt="Segelflugaktivitäten"
+            class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
+          >
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </div>
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all">
+          <img
+            src="/assets/images/volo-activity-02.jpg"
+            alt="Segelflug über der Toskana"
+            class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
+          >
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </div>
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all">
+          <img
+            src="/assets/images/volo-winch-launch.jpg"
+            alt="Windenstart"
+            class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
+          >
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </div>
       </div>
     </div>
+
+    {# Alianti #}
+    <div class="mb-16">
+      <h2 class="text-3xl font-serif font-bold text-gray-900 mb-8">🛩️ Segelflugzeuge und Schleppflugzeuge</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all">
+          <img
+            src="/assets/images/aliante-biposto.jpg"
+            alt="Doppelsitzer-Segelflugzeug"
+            class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300"
+          >
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </div>
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all">
+          <img
+            src="/assets/images/aliante-cockpit.jpg"
+            alt="Segelflugzeug-Cockpit"
+            class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
+          >
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </div>
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all">
+          <img
+            src="/assets/images/aliante-iaima-01.jpg"
+            alt="Schleppflugzeug I-AIMA (Maule)"
+            class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300"
+          >
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </div>
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all">
+          <img
+            src="/assets/images/aliante-iaima-02.jpg"
+            alt="Schleppflugzeug I-AIMA im Einsatz"
+            class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
+          >
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </div>
+      </div>
+    </div>
+
+    {# Pista e Campo #}
+    <div class="mb-16">
+      <h2 class="text-3xl font-serif font-bold text-gray-900 mb-8">📍 Die Landebahn und das Flugfeld</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all">
+          <img
+            src="/assets/images/pista-aerial.jpg"
+            alt="Luftaufnahme der Landebahn"
+            class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
+          >
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </div>
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all">
+          <img
+            src="/assets/images/pista-runway.jpg"
+            alt="Startbahn"
+            class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300"
+          >
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </div>
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all">
+          <img
+            src="/assets/images/pista-side.jpg"
+            alt="Seitenansicht der Landebahn"
+            class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
+          >
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </div>
+      </div>
+    </div>
+
+    {# Hangar e Strutture #}
+    <div class="mb-16">
+      <h2 class="text-3xl font-serif font-bold text-gray-900 mb-8">🏠 Hangar und Einrichtungen</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all">
+          <img
+            src="/assets/images/hangar-side.jpg"
+            alt="Hangar Seitenansicht"
+            class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
+          >
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </div>
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all">
+          <img
+            src="/assets/images/hangar-side-02.jpg"
+            alt="Hangar Ansicht"
+            class="w-full aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-300"
+          >
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </div>
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all">
+          <img
+            src="/assets/images/hangar-glider.jpg"
+            alt="Segelflugzeug im Hangar"
+            class="w-full aspect-[19/10] object-cover group-hover:scale-105 transition-transform duration-300"
+          >
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </div>
+      </div>
+    </div>
+
+    {# Il Team #}
+    <div class="mb-16">
+      <h2 class="text-3xl font-serif font-bold text-gray-900 mb-8">👨‍✈️ Unser Team</h2>
+      <div class="grid md:grid-cols-2 gap-6 max-w-3xl">
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all">
+          <img
+            src="/assets/images/owner-glider.jpg"
+            alt="Eigentümer mit Segelflugzeug"
+            class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300"
+          >
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </div>
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all">
+          <img
+            src="/assets/images/owner-towing.jpg"
+            alt="Flugvorbereitung"
+            class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300"
+          >
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </div>
+      </div>
+    </div>
+
+    {# Panorami #}
+    <div class="mb-16">
+      <h2 class="text-3xl font-serif font-bold text-gray-900 mb-8">🏔️ Panoramen der Toskana</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all">
+          <img
+            src="/assets/images/panorama-180.jpg"
+            alt="180-Grad-Panorama"
+            class="w-full aspect-[96/29] object-cover group-hover:scale-105 transition-transform duration-300"
+          >
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </div>
+        <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all">
+          <img
+            src="/assets/images/panorama-trasimeno.jpg"
+            alt="Blick auf den Trasimenischen See"
+            class="w-full aspect-[9/16] object-cover group-hover:scale-105 transition-transform duration-300"
+          >
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding bg-gray-50">
+  <div class="container-custom text-center">
+    <h2 class="text-3xl font-serif font-bold text-gray-900 mb-6">
+      Möchten Sie alles live sehen?
+    </h2>
+    <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+      Kontaktieren Sie uns, um einen Besuch zu buchen oder weitere Informationen anzufordern
+    </p>
+    <a href="/de/kontakt/" class="btn-primary">
+      Kontaktieren Sie uns
+    </a>
   </div>
 </section>
