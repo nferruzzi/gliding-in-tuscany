@@ -1,0 +1,8 @@
+# Robots.txt for Gliding in Tuscany
+# https://www.glidingintuscany.it
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.glidingintuscany.it/sitemap.xml

@@ -4,13 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{{ description or site.description[lang] }}">
+  <meta name="keywords" content="{{ keywords or site.keywords[lang] }}">
   <title>{{ title or site.title[lang] }}</title>
+
+  {# Canonical URL #}
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
   {# Open Graph #}
   <meta property="og:title" content="{{ title or site.title[lang] }}">
   <meta property="og:description" content="{{ description or site.description[lang] }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="{{ lang }}_{{ 'IT' if lang == 'it' else ('GB' if lang == 'en' else 'DE') }}">
+  <meta property="og:site_name" content="Gliding in Tuscany">
+
+  {# Twitter Cards #}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title or site.title[lang] }}">
+  <meta name="twitter:description" content="{{ description or site.description[lang] }}">
+  <meta name="twitter:image" content="{{ site.url }}/assets/images/og-image.jpg">
+
+  {# JSON-LD Structured Data #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Gliding in Tuscany - Aeroagriturismo Podere S.Apollonia",
+    "description": "{{ site.description[lang] }}",
+    "url": "{{ site.url }}",
+    "telephone": "{{ site.contact.phone }}",
+    "email": "{{ site.contact.email }}",
+    "image": "{{ site.url }}/assets/images/og-image.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ site.contact.address.street }}",
+      "addressLocality": "{{ site.contact.address.city }}",
+      "addressRegion": "{{ site.contact.address.province }}",
+      "postalCode": "{{ site.contact.address.postalCode }}",
+      "addressCountry": "{{ site.contact.address.country }}"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": {{ site.contact.geo.latitude }},
+      "longitude": {{ site.contact.geo.longitude }}
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "08:00",
+      "closes": "20:00"
+    },
+    "priceRange": "€€"
+  }
+  </script>
 
   {# Favicon placeholder #}
   <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
