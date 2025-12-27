@@ -61,127 +61,35 @@ description: Soggiorna nel nostro agriturismo in Valdichiana. 5 appartamenti per
     </p>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-      {# Rondone #}
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-        <div class="bg-primary-600 text-white p-4">
-          <h3 class="text-2xl font-serif font-bold">Rondone</h3>
-          <p class="text-primary-100 text-sm">3+1 posti letto</p>
+      {% for key, apt in appartamenti %}
+      <a href="/it/agriturismo/{{ apt.slug }}/" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow group {% if apt.isHistoric %}border-2 border-primary-200{% endif %}">
+        <div class="{% if apt.isHistoric %}bg-primary-700{% else %}bg-primary-600{% endif %} text-white p-4">
+          <h3 class="text-2xl font-serif font-bold">{{ apt.name }}</h3>
+          <p class="text-primary-100 text-sm">{{ apt.beds }} posti letto{% if apt.isHistoric %} &bull; Storico{% endif %}</p>
         </div>
         <div class="p-6">
           <img
-            src="/assets/images/t-int02.jpg"
-            alt="Appartamento Rondone"
-            class="rounded-lg h-40 w-full object-cover"
+            src="/assets/images/appartamenti/{{ apt.slug }}/{{ apt.photos[0] }}"
+            alt="Appartamento {{ apt.name }}"
+            class="rounded-lg h-40 w-full object-cover mb-4 group-hover:scale-105 transition-transform duration-300"
           >
-          <p class="text-gray-600 mb-4">
-            Bilocale spazioso ideale per famiglie, con tutti i comfort moderni.
+          <p class="text-gray-600 mb-4 line-clamp-3">
+            {{ apt.description.it | truncate(120) }}
           </p>
-          <div class="flex items-center text-sm text-gray-600">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-            </svg>
-            Fino a 4 persone
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-600">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+              Fino a {{ apt.maxGuests }} persone
+            </div>
+            <span class="text-primary-600 font-medium text-sm group-hover:text-primary-700">
+              Scopri &rarr;
+            </span>
           </div>
         </div>
-      </div>
-
-      {# Falco #}
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow border-2 border-primary-200">
-        <div class="bg-primary-700 text-white p-4">
-          <h3 class="text-2xl font-serif font-bold">Falco</h3>
-          <p class="text-primary-100 text-sm">2+1 posti letto • Storico</p>
-        </div>
-        <div class="p-6">
-          <img
-            src="/assets/images/t-int03.jpg"
-            alt="Appartamento Falco - Storico"
-            class="rounded-lg h-40 w-full object-cover"
-          >
-          <p class="text-gray-600 mb-4">
-            <strong>Appartamento storico</strong> che conserva l'ultima abitazione del mezzadro (occupata fino al 1990).
-            Caratterizzato da un grande camino originale e lavandino in granito. Alle pareti diplomi agricoli delle
-            imprese familiari di inizio '900.
-          </p>
-          <div class="flex items-center text-sm text-gray-600">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-            </svg>
-            Fino a 3 persone
-          </div>
-        </div>
-      </div>
-
-      {# Sparviero #}
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-        <div class="bg-primary-600 text-white p-4">
-          <h3 class="text-2xl font-serif font-bold">Sparviero</h3>
-          <p class="text-primary-100 text-sm">2+2 posti letto</p>
-        </div>
-        <div class="p-6">
-          <img
-            src="/assets/images/t-int04.jpg"
-            alt="Appartamento Sparviero"
-            class="rounded-lg h-40 w-full object-cover"
-          >
-          <p class="text-gray-600 mb-4">
-            Bilocale versatile perfetto per famiglie o gruppi, con spazi confortevoli.
-          </p>
-          <div class="flex items-center text-sm text-gray-600">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-            </svg>
-            Fino a 4 persone
-          </div>
-        </div>
-      </div>
-
-      {# Nibbio #}
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-        <div class="bg-primary-600 text-white p-4">
-          <h3 class="text-2xl font-serif font-bold">Nibbio</h3>
-          <p class="text-primary-100 text-sm">2+1 posti letto</p>
-        </div>
-        <div class="p-6">
-          <img
-            src="/assets/images/t-int01.jpg"
-            alt="Appartamento Nibbio"
-            class="rounded-lg h-40 w-full object-cover"
-          >
-          <p class="text-gray-600 mb-4">
-            Bilocale accogliente, ideale per coppie o piccole famiglie.
-          </p>
-          <div class="flex items-center text-sm text-gray-600">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-            </svg>
-            Fino a 3 persone
-          </div>
-        </div>
-      </div>
-
-      {# Picchio #}
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-        <div class="bg-primary-600 text-white p-4">
-          <h3 class="text-2xl font-serif font-bold">Picchio</h3>
-          <p class="text-primary-100 text-sm">2+1 posti letto</p>
-        </div>
-        <div class="p-6">
-          <img
-            src="/assets/images/t-int02.jpg"
-            alt="Appartamento Picchio"
-            class="rounded-lg h-40 w-full object-cover"
-          >
-          <p class="text-gray-600 mb-4">
-            Bilocale in Sant'Apollonia, caratteristico e confortevole.
-          </p>
-          <div class="flex items-center text-sm text-gray-600">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-            </svg>
-            Fino a 3 persone
-          </div>
-        </div>
-      </div>
+      </a>
+      {% endfor %}
     </div>
 
     <div class="bg-primary-50 rounded-lg p-6 mb-8">

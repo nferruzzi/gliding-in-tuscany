@@ -19,14 +19,25 @@
 
         {# Language Switcher with Flags #}
         {% set pagePath = "" %}
-        {% if 'scuola-volo' in page.url or 'flight-school' in page.url or 'segelflug' in page.url %}
-          {% set pagePath = "flight" %}
-        {% elif 'agriturismo' in page.url or 'farm-stay' in page.url %}
-          {% set pagePath = "farm" %}
-        {% elif 'galleria' in page.url or 'gallery' in page.url or 'galerie' in page.url %}
-          {% set pagePath = "gallery" %}
-        {% elif 'contatti' in page.url or 'contact' in page.url or 'kontakt' in page.url %}
-          {% set pagePath = "contact" %}
+        {% set aptSlug = "" %}
+        {# Check for apartment detail pages first #}
+        {% for key, apt in appartamenti %}
+          {% if apt.slug in page.url and ('agriturismo/' in page.url or 'farm-stay/' in page.url or 'bauernhof/' in page.url) %}
+            {% set pagePath = "apartment" %}
+            {% set aptSlug = apt.slug %}
+          {% endif %}
+        {% endfor %}
+        {# Then check other pages #}
+        {% if pagePath != "apartment" %}
+          {% if 'scuola-volo' in page.url or 'flight-school' in page.url or 'segelflug' in page.url %}
+            {% set pagePath = "flight" %}
+          {% elif 'agriturismo' in page.url or 'farm-stay' in page.url or 'bauernhof' in page.url %}
+            {% set pagePath = "farm" %}
+          {% elif 'galleria' in page.url or 'gallery' in page.url or 'galerie' in page.url %}
+            {% set pagePath = "gallery" %}
+          {% elif 'contatti' in page.url or 'contact' in page.url or 'kontakt' in page.url %}
+            {% set pagePath = "contact" %}
+          {% endif %}
         {% endif %}
         <div class="relative border-l pl-6">
           <button id="lang-switcher-btn" class="flex items-center space-x-2 text-gray-600 hover:text-primary-600 transition-colors">
@@ -38,17 +49,17 @@
             </svg>
           </button>
           <div id="lang-menu" class="hidden absolute right-0 mt-2 py-2 w-32 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
-            <a href="/it/{% if pagePath == 'flight' %}scuola-volo/{% elif pagePath == 'farm' %}agriturismo/{% elif pagePath == 'gallery' %}galleria/{% elif pagePath == 'contact' %}contatti/{% endif %}"
+            <a href="/it/{% if pagePath == 'apartment' %}agriturismo/{{ aptSlug }}/{% elif pagePath == 'flight' %}scuola-volo/{% elif pagePath == 'farm' %}agriturismo/{% elif pagePath == 'gallery' %}galleria/{% elif pagePath == 'contact' %}contatti/{% endif %}"
                class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors {% if lang == 'it' %}bg-primary-50 text-primary-600{% endif %}">
               <span class="text-lg">🇮🇹</span>
               <span>Italiano</span>
             </a>
-            <a href="/en/{% if pagePath == 'flight' %}flight-school/{% elif pagePath == 'farm' %}farm-stay/{% elif pagePath == 'gallery' %}gallery/{% elif pagePath == 'contact' %}contact/{% endif %}"
+            <a href="/en/{% if pagePath == 'apartment' %}farm-stay/{{ aptSlug }}/{% elif pagePath == 'flight' %}flight-school/{% elif pagePath == 'farm' %}farm-stay/{% elif pagePath == 'gallery' %}gallery/{% elif pagePath == 'contact' %}contact/{% endif %}"
                class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors {% if lang == 'en' %}bg-primary-50 text-primary-600{% endif %}">
               <span class="text-lg">🇬🇧</span>
               <span>English</span>
             </a>
-            <a href="/de/{% if pagePath == 'flight' %}segelflug/{% elif pagePath == 'farm' %}agriturismo/{% elif pagePath == 'gallery' %}galerie/{% elif pagePath == 'contact' %}kontakt/{% endif %}"
+            <a href="/de/{% if pagePath == 'apartment' %}bauernhof/{{ aptSlug }}/{% elif pagePath == 'flight' %}segelflug/{% elif pagePath == 'farm' %}bauernhof/{% elif pagePath == 'gallery' %}galerie/{% elif pagePath == 'contact' %}kontakt/{% endif %}"
                class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors {% if lang == 'de' %}bg-primary-50 text-primary-600{% endif %}">
               <span class="text-lg">🇩🇪</span>
               <span>Deutsch</span>
@@ -75,17 +86,17 @@
       {% endfor %}
       <div class="border-t mt-2 pt-3">
         <div class="text-xs text-gray-500 mb-2 px-2">Language</div>
-        <a href="/it/{% if pagePath == 'flight' %}scuola-volo/{% elif pagePath == 'farm' %}agriturismo/{% elif pagePath == 'gallery' %}galleria/{% elif pagePath == 'contact' %}contatti/{% endif %}"
+        <a href="/it/{% if pagePath == 'apartment' %}agriturismo/{{ aptSlug }}/{% elif pagePath == 'flight' %}scuola-volo/{% elif pagePath == 'farm' %}agriturismo/{% elif pagePath == 'gallery' %}galleria/{% elif pagePath == 'contact' %}contatti/{% endif %}"
            class="flex items-center space-x-2 py-2 text-gray-700 hover:text-primary-600 transition-colors {% if lang == 'it' %}text-primary-600 font-semibold{% endif %}">
           <span class="text-lg">🇮🇹</span>
           <span>Italiano</span>
         </a>
-        <a href="/en/{% if pagePath == 'flight' %}flight-school/{% elif pagePath == 'farm' %}farm-stay/{% elif pagePath == 'gallery' %}gallery/{% elif pagePath == 'contact' %}contact/{% endif %}"
+        <a href="/en/{% if pagePath == 'apartment' %}farm-stay/{{ aptSlug }}/{% elif pagePath == 'flight' %}flight-school/{% elif pagePath == 'farm' %}farm-stay/{% elif pagePath == 'gallery' %}gallery/{% elif pagePath == 'contact' %}contact/{% endif %}"
            class="flex items-center space-x-2 py-2 text-gray-700 hover:text-primary-600 transition-colors {% if lang == 'en' %}text-primary-600 font-semibold{% endif %}">
           <span class="text-lg">🇬🇧</span>
           <span>English</span>
         </a>
-        <a href="/de/{% if pagePath == 'flight' %}segelflug/{% elif pagePath == 'farm' %}agriturismo/{% elif pagePath == 'gallery' %}galerie/{% elif pagePath == 'contact' %}kontakt/{% endif %}"
+        <a href="/de/{% if pagePath == 'apartment' %}bauernhof/{{ aptSlug }}/{% elif pagePath == 'flight' %}segelflug/{% elif pagePath == 'farm' %}bauernhof/{% elif pagePath == 'gallery' %}galerie/{% elif pagePath == 'contact' %}kontakt/{% endif %}"
            class="flex items-center space-x-2 py-2 text-gray-700 hover:text-primary-600 transition-colors {% if lang == 'de' %}text-primary-600 font-semibold{% endif %}">
           <span class="text-lg">🇩🇪</span>
           <span>Deutsch</span>

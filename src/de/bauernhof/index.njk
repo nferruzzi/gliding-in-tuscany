@@ -63,127 +63,35 @@ description: Übernachten Sie in unserem Agriturismo im Valdichiana. 5 Wohnungen
     </p>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-      {# Rondone #}
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-        <div class="bg-primary-600 text-white p-4">
-          <h3 class="text-2xl font-serif font-bold">Rondone</h3>
-          <p class="text-primary-100 text-sm">3+1 Schlafplätze</p>
+      {% for key, apt in appartamenti %}
+      <a href="/de/bauernhof/{{ apt.slug }}/" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow group {% if apt.isHistoric %}border-2 border-primary-200{% endif %}">
+        <div class="{% if apt.isHistoric %}bg-primary-700{% else %}bg-primary-600{% endif %} text-white p-4">
+          <h3 class="text-2xl font-serif font-bold">{{ apt.name }}</h3>
+          <p class="text-primary-100 text-sm">{{ apt.beds }} Betten{% if apt.isHistoric %} &bull; Historisch{% endif %}</p>
         </div>
         <div class="p-6">
           <img
-            src="/assets/images/t-int02.jpg"
-            alt="Wohnung Rondone"
-            class="rounded-lg h-40 w-full object-cover"
+            src="/assets/images/appartamenti/{{ apt.slug }}/{{ apt.photos[0] }}"
+            alt="Ferienwohnung {{ apt.name }}"
+            class="rounded-lg h-40 w-full object-cover mb-4 group-hover:scale-105 transition-transform duration-300"
           >
-          <p class="text-gray-600 mb-4">
-            Geräumige Zweizimmerwohnung ideal für Familien, mit allem modernen Komfort.
+          <p class="text-gray-600 mb-4 line-clamp-3">
+            {{ apt.description.de | truncate(120) }}
           </p>
-          <div class="flex items-center text-sm text-gray-600">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-            </svg>
-            Bis zu 4 Personen
+          <div class="flex items-center justify-between">
+            <div class="flex items-center text-sm text-gray-600">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+              Bis zu {{ apt.maxGuests }} Personen
+            </div>
+            <span class="text-primary-600 font-medium text-sm group-hover:text-primary-700">
+              Entdecken &rarr;
+            </span>
           </div>
         </div>
-      </div>
-
-      {# Falco #}
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow border-2 border-primary-200">
-        <div class="bg-primary-700 text-white p-4">
-          <h3 class="text-2xl font-serif font-bold">Falco</h3>
-          <p class="text-primary-100 text-sm">2+1 Schlafplätze • Historisch</p>
-        </div>
-        <div class="p-6">
-          <img
-            src="/assets/images/t-int03.jpg"
-            alt="Wohnung Falco - Historisch"
-            class="rounded-lg h-40 w-full object-cover"
-          >
-          <p class="text-gray-600 mb-4">
-            <strong>Historische Wohnung</strong>, die die letzte Behausung des Halbpächters bewahrt (bis 1990 bewohnt).
-            Charakterisiert durch einen großen originalen Kamin und ein Granitwaschbecken. An den Wänden hängen
-            landwirtschaftliche Diplome der Familienbetriebe aus dem frühen 20. Jahrhundert.
-          </p>
-          <div class="flex items-center text-sm text-gray-600">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-            </svg>
-            Bis zu 3 Personen
-          </div>
-        </div>
-      </div>
-
-      {# Sparviero #}
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-        <div class="bg-primary-600 text-white p-4">
-          <h3 class="text-2xl font-serif font-bold">Sparviero</h3>
-          <p class="text-primary-100 text-sm">2+2 Schlafplätze</p>
-        </div>
-        <div class="p-6">
-          <img
-            src="/assets/images/t-int04.jpg"
-            alt="Wohnung Sparviero"
-            class="rounded-lg h-40 w-full object-cover"
-          >
-          <p class="text-gray-600 mb-4">
-            Vielseitige Zweizimmerwohnung perfekt für Familien oder Gruppen, mit komfortablen Räumen.
-          </p>
-          <div class="flex items-center text-sm text-gray-600">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-            </svg>
-            Bis zu 4 Personen
-          </div>
-        </div>
-      </div>
-
-      {# Nibbio #}
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-        <div class="bg-primary-600 text-white p-4">
-          <h3 class="text-2xl font-serif font-bold">Nibbio</h3>
-          <p class="text-primary-100 text-sm">2+1 Schlafplätze</p>
-        </div>
-        <div class="p-6">
-          <img
-            src="/assets/images/t-int01.jpg"
-            alt="Wohnung Nibbio"
-            class="rounded-lg h-40 w-full object-cover"
-          >
-          <p class="text-gray-600 mb-4">
-            Gemütliche Zweizimmerwohnung, ideal für Paare oder kleine Familien.
-          </p>
-          <div class="flex items-center text-sm text-gray-600">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-            </svg>
-            Bis zu 3 Personen
-          </div>
-        </div>
-      </div>
-
-      {# Picchio #}
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-        <div class="bg-primary-600 text-white p-4">
-          <h3 class="text-2xl font-serif font-bold">Picchio</h3>
-          <p class="text-primary-100 text-sm">2+1 Schlafplätze</p>
-        </div>
-        <div class="p-6">
-          <img
-            src="/assets/images/t-int02.jpg"
-            alt="Wohnung Picchio"
-            class="rounded-lg h-40 w-full object-cover"
-          >
-          <p class="text-gray-600 mb-4">
-            Zweizimmerwohnung in Sant'Apollonia, charakteristisch und komfortabel.
-          </p>
-          <div class="flex items-center text-sm text-gray-600">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-            </svg>
-            Bis zu 3 Personen
-          </div>
-        </div>
-      </div>
+      </a>
+      {% endfor %}
     </div>
 
     <div class="bg-primary-50 rounded-lg p-6 mb-8">

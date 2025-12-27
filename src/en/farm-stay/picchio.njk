@@ -1,0 +1,126 @@
+---
+layout: base.njk
+lang: en
+title: Picchio Apartment - Gliding in Tuscany Farm Stay
+description: Picchio apartment, charming two-room flat for 3 guests in the Sant'Apollonia farmhouse. In our Valdichiana farm stay.
+---
+
+{% set apt = appartamenti.picchio %}
+
+<section class="bg-gradient-to-br from-tuscany-sand/20 to-tuscany-olive/10 py-8">
+  <div class="container-custom">
+    <nav class="text-sm mb-4">
+      <a href="/en/farm-stay/" class="text-primary-600 hover:text-primary-700">Farm Stay</a>
+      <span class="mx-2 text-gray-400">/</span>
+      <span class="text-gray-600">{{ apt.name }}</span>
+    </nav>
+    <div class="flex flex-wrap items-center gap-4">
+      <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900">
+        {{ apt.name }}
+      </h1>
+      <div class="flex gap-2">
+        <span class="bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+          {{ apt.beds }} beds
+        </span>
+        <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">
+          {{ apt.sqm }} m²
+        </span>
+      </div>
+    </div>
+    <p class="text-lg text-gray-600 mt-2">{{ apt.building }} Farmhouse</p>
+  </div>
+</section>
+
+<section class="section-padding bg-white">
+  <div class="container-custom">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      {% for photo in apt.photos %}
+        <div class="{% if loop.first %}col-span-2 row-span-2{% endif %} relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all">
+          <img
+            src="/assets/images/appartamenti/{{ apt.slug }}/{{ photo }}"
+            alt="{{ apt.name }} Apartment - {{ photo | replace('.jpeg', '') | replace('_', ' ') }}"
+            class="w-full h-full object-cover {% if loop.first %}aspect-[4/3]{% else %}aspect-square{% endif %} group-hover:scale-105 transition-transform duration-300"
+            loading="{% if loop.first %}eager{% else %}lazy{% endif %}"
+          >
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-padding bg-gray-50">
+  <div class="container-custom">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="text-3xl font-serif font-bold text-gray-900 mb-6">
+          Description
+        </h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-8">
+          {{ apt.description.en }}
+        </p>
+
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Amenities</h3>
+        <ul class="grid grid-cols-2 gap-3">
+          {% for feature in apt.features.en %}
+            <li class="flex items-center text-gray-700">
+              <svg class="w-5 h-5 text-primary-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              {{ feature }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div>
+        <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Rates</h3>
+
+          <div class="space-y-4 mb-6">
+            <div class="flex justify-between items-center pb-3 border-b">
+              <div>
+                <p class="font-medium text-gray-900">Low Season</p>
+                <p class="text-sm text-gray-500">April-June, September</p>
+              </div>
+              <p class="text-2xl font-bold text-primary-600">€{{ apt.prices.low }}<span class="text-sm font-normal text-gray-500">/night</span></p>
+            </div>
+            <div class="flex justify-between items-center">
+              <div>
+                <p class="font-medium text-gray-900">High Season</p>
+                <p class="text-sm text-gray-500">July-August</p>
+              </div>
+              <p class="text-2xl font-bold text-primary-600">€{{ apt.prices.high }}<span class="text-sm font-normal text-gray-500">/night</span></p>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-lg p-4 mb-6 text-sm text-gray-600">
+            <p class="mb-2"><strong>Included:</strong> Utilities, linens, final cleaning</p>
+            <p><strong>Minimum stay:</strong> 2 nights in low season</p>
+          </div>
+
+          <a href="/en/contact/" class="btn-primary w-full text-center block">
+            Check Availability
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding bg-white">
+  <div class="container-custom">
+    <h2 class="text-2xl font-serif font-bold text-gray-900 mb-6 text-center">
+      Other Apartments
+    </h2>
+    <div class="grid md:grid-cols-4 gap-4">
+      {% for key, other in appartamenti %}
+        {% if other.slug != apt.slug %}
+          <a href="/en/farm-stay/{{ other.slug }}/" class="bg-gray-50 rounded-lg p-4 hover:bg-primary-50 transition-colors group">
+            <h3 class="font-bold text-gray-900 group-hover:text-primary-600">{{ other.name }}</h3>
+            <p class="text-sm text-gray-500">{{ other.beds }} beds</p>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

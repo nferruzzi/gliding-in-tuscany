@@ -1,4 +1,41 @@
+const Image = require("@11ty/eleventy-img");
+const path = require("path");
+
+// Shortcode per immagini ottimizzate
+async function imageShortcode(src, alt, sizes = "100vw", classes = "") {
+  let inputPath = src;
+
+  // Se il path inizia con /, è relativo a src/
+  if (src.startsWith("/")) {
+    inputPath = path.join("src", src);
+  }
+
+  let metadata = await Image(inputPath, {
+    widths: [400, 800, 1200, 1600],
+    formats: ["webp", "jpeg"],
+    outputDir: "./_site/assets/images/optimized/",
+    urlPath: "/assets/images/optimized/",
+    filenameFormat: function (id, src, width, format) {
+      const name = path.basename(src, path.extname(src));
+      return `${name}-${width}w.${format}`;
+    }
+  });
+
+  let imageAttributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async",
+    class: classes
+  };
+
+  return Image.generateHTML(metadata, imageAttributes);
+}
+
 module.exports = function(eleventyConfig) {
+  // Shortcode immagini ottimizzate
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+
   // Copia assets statici
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/css");
