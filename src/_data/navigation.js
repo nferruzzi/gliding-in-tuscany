@@ -16,7 +16,7 @@ module.exports = {
   de: [
     { label: "Startseite", url: "/de/" },
     { label: "Segelflug", url: "/de/segelflug/" },
-    { label: "Agriturismo", url: "/de/agriturismo/" },
+    { label: "Ferienwohnungen", url: "/de/bauernhof/" },
     { label: "Galerie", url: "/de/galerie/" },
     { label: "Kontakt", url: "/de/kontakt/" }
   ]
