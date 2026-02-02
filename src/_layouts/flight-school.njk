@@ -6,6 +6,9 @@
   <meta name="description" content="{{ description or site.description[lang] }}">
   <title>{{ title or site.title[lang] }}</title>
 
+  {# Canonical URL #}
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
   {# Open Graph #}
   <meta property="og:title" content="{{ title or site.title[lang] }}">
   <meta property="og:description" content="{{ description or site.description[lang] }}">
@@ -24,9 +27,12 @@
   <link rel="stylesheet" href="/css/output.css">
 
   {# Alternate languages #}
+  {% if alternates %}
   {% for language in site.languages %}
-  <link rel="alternate" hreflang="{{ language }}" href="{{ site.url }}/{{ language }}{{ page.url | replace(lang, '') }}">
+  <link rel="alternate" hreflang="{{ language }}" href="{{ site.url }}{{ alternates[language] }}">
   {% endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ alternates[site.defaultLanguage] }}">
+  {% endif %}
 
 </head>
 <body class="flex flex-col min-h-screen relative">

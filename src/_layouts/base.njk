@@ -74,9 +74,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
 
   {# Alternate languages #}
+  {% if alternates %}
   {% for language in site.languages %}
-  <link rel="alternate" hreflang="{{ language }}" href="{{ site.url }}/{{ language }}{{ page.url | replace(lang, '') }}">
+  <link rel="alternate" hreflang="{{ language }}" href="{{ site.url }}{{ alternates[language] }}">
   {% endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ alternates[site.defaultLanguage] }}">
+  {% endif %}
 </head>
 <body class="flex flex-col min-h-screen">
   {% include "header.njk" %}

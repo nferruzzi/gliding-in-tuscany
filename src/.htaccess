@@ -3,10 +3,19 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Remove trailing slashes
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} (.+)/$
-RewriteRule ^ %1 [R=301,L]
+# Redirect non-www to www
+RewriteCond %{HTTP_HOST} ^glidingintuscany\.it$ [NC]
+RewriteRule ^(.*)$ https://www.glidingintuscany.it/$1 [L,R=301]
+
+# Redirect vecchie pagine del sito precedente
+RewriteRule ^index\.html$ /it/ [L,R=301]
+RewriteRule ^aeroagri\.htm$ /it/agriturismo/ [L,R=301]
+RewriteRule ^interni_en\.htm$ /en/farm-stay/ [L,R=301]
+RewriteRule ^profilo\.html$ /it/ [L,R=301]
+RewriteRule ^profilo_en\.html$ /en/ [L,R=301]
+RewriteRule ^contatti_en\.htm$ /en/contact/ [L,R=301]
+RewriteRule ^siamo_en\.htm$ /en/ [L,R=301]
+RewriteRule ^aeroagri_en\.htm$ /en/farm-stay/ [L,R=301]
 
 # Custom error pages (opzionale)
 # ErrorDocument 404 /404.html

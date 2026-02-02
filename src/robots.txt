@@ -3,6 +3,7 @@
 
 User-agent: *
 Allow: /
+Disallow: /images/struttura/
 
 # Sitemap location
 Sitemap: https://www.glidingintuscany.it/sitemap.xml
