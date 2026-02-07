@@ -11,8 +11,8 @@
       <div class="hidden md:flex items-center space-x-8">
         {% for item in navigation[lang] %}
         <a href="{{ item.url }}"
-           class="text-gray-700 hover:text-primary-600 transition-colors font-medium
-                  {% if page.url == item.url %}text-primary-600 border-b-2 border-primary-600{% endif %}">
+           class="text-gray-700 hover:text-primary-700 transition-colors font-medium
+                  {% if page.url == item.url %}text-primary-700 border-b-2 border-primary-600{% endif %}">
           {{ item.label }}
         </a>
         {% endfor %}
@@ -40,7 +40,7 @@
           {% endif %}
         {% endif %}
         <div class="relative border-l pl-6">
-          <button id="lang-switcher-btn" class="flex items-center space-x-2 text-gray-600 hover:text-primary-600 transition-colors" aria-label="Language">
+          <button id="lang-switcher-btn" class="flex items-center space-x-2 text-gray-600 hover:text-primary-700 transition-colors" aria-label="Language">
             <span class="text-xl">
               {% if lang == 'it' %}🇮🇹{% elif lang == 'en' %}🇬🇧{% elif lang == 'de' %}🇩🇪{% endif %}
             </span>
@@ -50,17 +50,17 @@
           </button>
           <div id="lang-menu" class="hidden absolute right-0 mt-2 py-2 w-32 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
             <a href="/it/{% if pagePath == 'apartment' %}agriturismo/{{ aptSlug }}/{% elif pagePath == 'flight' %}scuola-volo/{% elif pagePath == 'farm' %}agriturismo/{% elif pagePath == 'gallery' %}galleria/{% elif pagePath == 'contact' %}contatti/{% endif %}"
-               class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors {% if lang == 'it' %}bg-primary-50 text-primary-600{% endif %}">
+               class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-700 transition-colors {% if lang == 'it' %}bg-primary-50 text-primary-700{% endif %}">
               <span class="text-lg">🇮🇹</span>
               <span>Italiano</span>
             </a>
             <a href="/en/{% if pagePath == 'apartment' %}farm-stay/{{ aptSlug }}/{% elif pagePath == 'flight' %}flight-school/{% elif pagePath == 'farm' %}farm-stay/{% elif pagePath == 'gallery' %}gallery/{% elif pagePath == 'contact' %}contact/{% endif %}"
-               class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors {% if lang == 'en' %}bg-primary-50 text-primary-600{% endif %}">
+               class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-700 transition-colors {% if lang == 'en' %}bg-primary-50 text-primary-700{% endif %}">
               <span class="text-lg">🇬🇧</span>
               <span>English</span>
             </a>
             <a href="/de/{% if pagePath == 'apartment' %}bauernhof/{{ aptSlug }}/{% elif pagePath == 'flight' %}segelflug/{% elif pagePath == 'farm' %}bauernhof/{% elif pagePath == 'gallery' %}galerie/{% elif pagePath == 'contact' %}kontakt/{% endif %}"
-               class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors {% if lang == 'de' %}bg-primary-50 text-primary-600{% endif %}">
+               class="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-700 transition-colors {% if lang == 'de' %}bg-primary-50 text-primary-700{% endif %}">
               <span class="text-lg">🇩🇪</span>
               <span>Deutsch</span>
             </a>
@@ -80,24 +80,24 @@
     <div id="mobile-menu" class="hidden md:hidden pt-4 pb-2">
       {% for item in navigation[lang] %}
       <a href="{{ item.url }}"
-         class="block py-2 text-gray-700 hover:text-primary-600 transition-colors">
+         class="block py-2 text-gray-700 hover:text-primary-700 transition-colors">
         {{ item.label }}
       </a>
       {% endfor %}
       <div class="border-t mt-2 pt-3">
         <div class="text-xs text-gray-500 mb-2 px-2">Language</div>
         <a href="/it/{% if pagePath == 'apartment' %}agriturismo/{{ aptSlug }}/{% elif pagePath == 'flight' %}scuola-volo/{% elif pagePath == 'farm' %}agriturismo/{% elif pagePath == 'gallery' %}galleria/{% elif pagePath == 'contact' %}contatti/{% endif %}"
-           class="flex items-center space-x-2 py-2 text-gray-700 hover:text-primary-600 transition-colors {% if lang == 'it' %}text-primary-600 font-semibold{% endif %}">
+           class="flex items-center space-x-2 py-2 text-gray-700 hover:text-primary-700 transition-colors {% if lang == 'it' %}text-primary-700 font-semibold{% endif %}">
           <span class="text-lg">🇮🇹</span>
           <span>Italiano</span>
         </a>
         <a href="/en/{% if pagePath == 'apartment' %}farm-stay/{{ aptSlug }}/{% elif pagePath == 'flight' %}flight-school/{% elif pagePath == 'farm' %}farm-stay/{% elif pagePath == 'gallery' %}gallery/{% elif pagePath == 'contact' %}contact/{% endif %}"
-           class="flex items-center space-x-2 py-2 text-gray-700 hover:text-primary-600 transition-colors {% if lang == 'en' %}text-primary-600 font-semibold{% endif %}">
+           class="flex items-center space-x-2 py-2 text-gray-700 hover:text-primary-700 transition-colors {% if lang == 'en' %}text-primary-700 font-semibold{% endif %}">
           <span class="text-lg">🇬🇧</span>
           <span>English</span>
         </a>
         <a href="/de/{% if pagePath == 'apartment' %}bauernhof/{{ aptSlug }}/{% elif pagePath == 'flight' %}segelflug/{% elif pagePath == 'farm' %}bauernhof/{% elif pagePath == 'gallery' %}galerie/{% elif pagePath == 'contact' %}kontakt/{% endif %}"
-           class="flex items-center space-x-2 py-2 text-gray-700 hover:text-primary-600 transition-colors {% if lang == 'de' %}text-primary-600 font-semibold{% endif %}">
+           class="flex items-center space-x-2 py-2 text-gray-700 hover:text-primary-700 transition-colors {% if lang == 'de' %}text-primary-700 font-semibold{% endif %}">
           <span class="text-lg">🇩🇪</span>
           <span>Deutsch</span>
         </a>
