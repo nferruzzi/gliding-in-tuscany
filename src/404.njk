@@ -9,20 +9,44 @@ permalink: /404.html
   <div class="container-custom text-center">
     <div class="max-w-2xl mx-auto">
       <h1 class="text-9xl font-serif font-bold text-primary-600 mb-4">404</h1>
-      <h2 class="text-4xl font-serif font-bold text-gray-900 mb-6">
+      <h2 id="msg-title" class="text-4xl font-serif font-bold text-gray-900 mb-6">
         Pagina non trovata
       </h2>
-      <p class="text-xl text-gray-700 mb-8">
-        Spiacenti, la pagina che stai cercando non esiste o è stata spostata.
+      <p id="msg-text" class="text-xl text-gray-700 mb-8">
+        Spiacenti, la pagina che stai cercando non esiste o &egrave; stata spostata.
       </p>
       <div class="flex flex-wrap gap-4 justify-center">
-        <a href="/it/" class="btn-primary">
+        <a id="btn-home" href="/it/" class="btn-primary">
           Torna alla Home
         </a>
-        <a href="/it/contatti/" class="btn-secondary">
+        <a id="btn-contact" href="/it/contatti/" class="btn-secondary">
           Contattaci
         </a>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  (function() {
+    var path = window.location.pathname;
+    var lang = path.startsWith('/en/') ? 'en' : path.startsWith('/de/') ? 'de' : 'it';
+    if (lang === 'en') {
+      document.documentElement.lang = 'en';
+      document.getElementById('msg-title').textContent = 'Page not found';
+      document.getElementById('msg-text').textContent = 'Sorry, the page you are looking for does not exist or has been moved.';
+      document.getElementById('btn-home').textContent = 'Back to Home';
+      document.getElementById('btn-home').href = '/en/';
+      document.getElementById('btn-contact').textContent = 'Contact us';
+      document.getElementById('btn-contact').href = '/en/contact/';
+    } else if (lang === 'de') {
+      document.documentElement.lang = 'de';
+      document.getElementById('msg-title').textContent = 'Seite nicht gefunden';
+      document.getElementById('msg-text').textContent = 'Die gesuchte Seite existiert nicht oder wurde verschoben.';
+      document.getElementById('btn-home').textContent = 'Zur Startseite';
+      document.getElementById('btn-home').href = '/de/';
+      document.getElementById('btn-contact').textContent = 'Kontakt';
+      document.getElementById('btn-contact').href = '/de/kontakt/';
+    }
+  })();
+</script>

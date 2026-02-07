@@ -17,8 +17,8 @@ RewriteRule ^contatti_en\.htm$ /en/contact/ [L,R=301]
 RewriteRule ^siamo_en\.htm$ /en/ [L,R=301]
 RewriteRule ^aeroagri_en\.htm$ /en/farm-stay/ [L,R=301]
 
-# Custom error pages (opzionale)
-# ErrorDocument 404 /404.html
+# Custom error pages
+ErrorDocument 404 /404.html
 
 # Comprimi file
 <IfModule mod_deflate.c>
