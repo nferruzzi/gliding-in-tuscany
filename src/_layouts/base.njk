@@ -70,8 +70,10 @@
   {# Styles #}
   <link rel="stylesheet" href="/css/output.css">
 
-  {# GLightbox CSS #}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
+  {# GLightbox CSS - solo nelle pagine che lo usano #}
+  {% if glightbox %}
+  <link rel="stylesheet" href="/assets/vendor/glightbox.min.css">
+  {% endif %}
 
   {# Alternate languages #}
   {% if alternates %}
@@ -90,10 +92,10 @@
 
   {% include "footer.njk" %}
 
-  {# GLightbox JS #}
-  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
+  {# GLightbox JS - solo nelle pagine che lo usano #}
+  {% if glightbox %}
+  <script src="/assets/vendor/glightbox.min.js"></script>
   <script>
-    // Initialize GLightbox for gallery images
     const lightbox = GLightbox({
       touchNavigation: true,
       loop: true,
@@ -101,6 +103,7 @@
       closeOnOutsideClick: true
     });
   </script>
+  {% endif %}
 
   {# Smooth scroll #}
   <script>

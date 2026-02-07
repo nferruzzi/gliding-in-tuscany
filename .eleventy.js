@@ -2,7 +2,7 @@ const Image = require("@11ty/eleventy-img");
 const path = require("path");
 
 // Shortcode per immagini ottimizzate
-async function imageShortcode(src, alt, sizes = "100vw", classes = "") {
+async function imageShortcode(src, alt, sizes = "100vw", classes = "", loading = "lazy", fetchpriority = "") {
   let inputPath = src;
 
   // Se il path inizia con /, è relativo a src/
@@ -24,10 +24,14 @@ async function imageShortcode(src, alt, sizes = "100vw", classes = "") {
   let imageAttributes = {
     alt,
     sizes,
-    loading: "lazy",
-    decoding: "async",
+    loading,
+    decoding: loading === "eager" ? "sync" : "async",
     class: classes
   };
+
+  if (fetchpriority) {
+    imageAttributes.fetchpriority = fetchpriority;
+  }
 
   return Image.generateHTML(metadata, imageAttributes);
 }
