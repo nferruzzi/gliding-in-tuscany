@@ -67,9 +67,9 @@ alternates:
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
       {% for key, apt in appartamenti %}
       <a href="/en/farm-stay/{{ apt.slug }}/" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow group {% if apt.isHistoric %}border-2 border-primary-200{% endif %}">
-        <div class="{% if apt.isHistoric %}bg-primary-700{% else %}bg-primary-600{% endif %} text-white p-4">
+        <div class="bg-primary-700 text-white p-4">
           <h3 class="text-2xl font-serif font-bold">{{ apt.name }}</h3>
-          <p class="text-primary-100 text-sm">{{ apt.beds }} beds{% if apt.isHistoric %} &bull; Historic{% endif %}</p>
+          <p class="text-white/80 text-sm">{{ apt.beds }} beds{% if apt.isHistoric %} &bull; Historic{% endif %}</p>
         </div>
         <div class="p-6">
           <img
@@ -407,7 +407,7 @@ alternates:
   </div>
 </section>
 
-<section class="relative section-padding bg-primary-600 text-white overflow-hidden">
+<section class="relative section-padding bg-primary-700 text-white overflow-hidden">
   <img
     src="/assets/images/panorama-180.jpg"
     alt="Tuscan panorama"
