@@ -85,19 +85,13 @@ alternates:
           </div>
         </div>
 
-        {# Google Maps #}
-        <div class="mt-8 rounded-lg overflow-hidden shadow-md">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.8447!2d11.9045053!3d43.2970872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132bfb004c9245b7%3A0x7a7e799f1a606ca7!2sAviosuperficie%20Montecchio%20podere%20S.Apollonia!5e0!3m2!1sde!2sde!4v1234567890"
-            width="100%"
-            height="300"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Karte Aviosuperficie Montecchio podere S.Apollonia"
-          ></iframe>
-        </div>
+        {# Karte - Link zu Google Maps, keine Cookies/Tracking #}
+        <a href="https://www.google.com/maps/place/Aviosuperficie+Montecchio+podere+S.Apollonia/@43.2971,11.9019251,1378m/data=!3m1!1e3!4m12!1m5!3m4!2zNDPCsDE3JzQ5LjYiTiAxMcKwNTQnMTYuMiJF!8m2!3d43.2971!4d11.9045!3m5!1s0x132bfb004c9245b7:0x7a7e799f1a606ca7!8m2!3d43.2970833!4d11.9070856!16s%2Fg%2F11vrjpgxtm" target="_blank" rel="noopener" class="block mt-8 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow relative group">
+          <img src="/assets/images/map-placeholder.png" alt="Karte Aviosuperficie Montecchio podere S.Apollonia" class="w-full h-[300px] object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+            <span class="bg-white/90 text-primary-700 font-semibold px-4 py-2 rounded-lg shadow opacity-0 group-hover:opacity-100 transition-opacity">In Google Maps &ouml;ffnen &rarr;</span>
+          </div>
+        </a>
       </div>
 
       {# Contact Form #}
