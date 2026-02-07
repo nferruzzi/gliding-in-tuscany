@@ -1,5 +1,6 @@
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
+const fs = require("fs");
 
 // Shortcode per immagini ottimizzate
 async function imageShortcode(src, alt, sizes = "100vw", classes = "", loading = "lazy", fetchpriority = "") {
@@ -41,6 +42,12 @@ async function imageShortcode(src, alt, sizes = "100vw", classes = "", loading =
 module.exports = function(eleventyConfig) {
   // Shortcode immagini ottimizzate
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+
+  // Filtro per inline CSS
+  eleventyConfig.addFilter("inlineCSS", function(filePath) {
+    const cssPath = path.join("src", filePath);
+    return fs.readFileSync(cssPath, "utf8");
+  });
 
   // Copia assets statici
   eleventyConfig.addPassthroughCopy("src/assets");

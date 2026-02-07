@@ -64,7 +64,11 @@
   {# Favicon placeholder #}
   <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 
-  {# Fonts - Self-hosted (Inter + Font Awesome) - inline per evitare 403 su LiteSpeed #}
+  {# Preload font più usati per parallelizzare download #}
+  <link rel="preload" href="/assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+  {# CSS inline per eliminare richiesta render-blocking #}
   <style>
   @font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/Inter-Regular.woff2') format('woff2')}
   @font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/Inter-Medium.woff2') format('woff2')}
@@ -73,10 +77,8 @@
   @font-face{font-family:'Font Awesome 6 Free';font-style:normal;font-weight:900;font-display:block;src:url('/assets/fonts/fa-solid-900.woff2') format('woff2')}
   .fa-solid,.fas{font-family:'Font Awesome 6 Free';font-weight:900;font-style:normal;font-variant:normal;text-rendering:auto;line-height:1;display:inline-block;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
   .fa-circle-info::before{content:"\f05a"}.fa-users::before{content:"\f0c0"}.fa-person-biking::before{content:"\f84a"}.fa-water::before{content:"\f773"}.fa-mountain-city::before{content:"\e52e"}.fa-martini-glass-citrus::before{content:"\f561"}
+  {{ "/css/output.css" | inlineCSS | safe }}
   </style>
-
-  {# Styles #}
-  <link rel="stylesheet" href="/css/output.css">
 
   {# GLightbox CSS - solo nelle pagine che lo usano #}
   {% if glightbox %}
