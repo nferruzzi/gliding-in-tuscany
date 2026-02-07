@@ -10,9 +10,9 @@ module.exports = {
     de: "Agriturismo mit Segelflugaktivitäten in der Toskana, Region Arezzo. Einführungsflüge am Wochenende über toskanische Hügel. Perfektes Geschenk für Flugbegeisterte."
   },
   keywords: {
-    it: "volo a vela toscana, agriturismo arezzo, scuola volo aliante, regalo volo aliante, gliding italy, volo a vela italia, corso volo a vela, esperienza volo toscana, aeroporto toscana, come arrivare in toscana, aviosuperficie toscana",
-    en: "gliding tuscany, farm stay arezzo, glider flight school, gift flight experience, soaring italy, gliding holiday italy, learn to glide tuscany, tuscany airport, how to reach tuscany, airstrip tuscany",
-    de: "segelfliegen toskana, agriturismo arezzo, segelflugschule italien, geschenk flugerlebnis, segelflug urlaub italien, segelfliegen lernen toskana, toskana flughafen, flughafen toskana, anreise toskana, nächster flughafen arezzo"
+    it: "volo a vela toscana, agriturismo arezzo, scuola volo aliante, regalo volo aliante, gliding italy, volo a vela italia, corso volo a vela, esperienza volo toscana, aeroporto toscana, come arrivare in toscana, aviosuperficie toscana, regalo volo aliante toscana",
+    en: "gliding tuscany, farm stay arezzo, glider flight school, gift flight experience, soaring italy, gliding holiday italy, learn to glide tuscany, tuscany airport, how to reach tuscany, airstrip tuscany, gift flight tuscany",
+    de: "segelfliegen toskana, agriturismo arezzo, segelflugschule italien, geschenk flugerlebnis, segelflug urlaub italien, segelfliegen lernen toskana, toskana flughafen, flughafen toskana, anreise toskana, nächster flughafen arezzo, geschenk segelflug toskana"
   },
   url: "https://www.glidingintuscany.it",
   languages: ["it", "en", "de"],
