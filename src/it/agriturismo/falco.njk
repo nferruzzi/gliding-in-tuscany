@@ -14,7 +14,7 @@ alternates:
 <section class="bg-gradient-to-br from-tuscany-sand/20 to-tuscany-olive/10 py-8">
   <div class="container-custom">
     <nav class="text-sm mb-4">
-      <a href="/it/agriturismo/" class="text-primary-600 hover:text-primary-700">Agriturismo</a>
+      <a href="/it/agriturismo/" class="text-primary-700 hover:text-primary-700">Agriturismo</a>
       <span class="mx-2 text-gray-400">/</span>
       <span class="text-gray-600">{{ apt.name }}</span>
     </nav>
@@ -72,7 +72,7 @@ alternates:
         <ul class="grid grid-cols-2 gap-3">
           {% for feature in apt.features.it %}
             <li class="flex items-center text-gray-700">
-              <svg class="w-5 h-5 text-primary-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-primary-700 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
               {{ feature }}
@@ -91,14 +91,14 @@ alternates:
                 <p class="font-medium text-gray-900">Bassa stagione</p>
                 <p class="text-sm text-gray-500">Aprile-Giugno, Settembre</p>
               </div>
-              <p class="text-2xl font-bold text-primary-600">€{{ apt.prices.low }}<span class="text-sm font-normal text-gray-500">/notte</span></p>
+              <p class="text-2xl font-bold text-primary-700">€{{ apt.prices.low }}<span class="text-sm font-normal text-gray-500">/notte</span></p>
             </div>
             <div class="flex justify-between items-center">
               <div>
                 <p class="font-medium text-gray-900">Alta stagione</p>
                 <p class="text-sm text-gray-500">Luglio-Agosto</p>
               </div>
-              <p class="text-2xl font-bold text-primary-600">€{{ apt.prices.high }}<span class="text-sm font-normal text-gray-500">/notte</span></p>
+              <p class="text-2xl font-bold text-primary-700">€{{ apt.prices.high }}<span class="text-sm font-normal text-gray-500">/notte</span></p>
             </div>
           </div>
 
@@ -125,7 +125,7 @@ alternates:
       {% for key, other in appartamenti %}
         {% if other.slug != apt.slug %}
           <a href="/it/agriturismo/{{ other.slug }}/" class="bg-gray-50 rounded-lg p-4 hover:bg-primary-50 transition-colors group">
-            <h3 class="font-bold text-gray-900 group-hover:text-primary-600">{{ other.name }}</h3>
+            <h3 class="font-bold text-gray-900 group-hover:text-primary-700">{{ other.name }}</h3>
             <p class="text-sm text-gray-500">{{ other.beds }} posti letto</p>
           </a>
         {% endif %}

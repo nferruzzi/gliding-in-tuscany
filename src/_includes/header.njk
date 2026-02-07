@@ -12,7 +12,7 @@
         {% for item in navigation[lang] %}
         <a href="{{ item.url }}"
            class="text-gray-700 hover:text-primary-700 transition-colors font-medium
-                  {% if page.url == item.url %}text-primary-700 border-b-2 border-primary-600{% endif %}">
+                  {% if page.url == item.url %}text-primary-700 border-b-2 border-primary-700{% endif %}">
           {{ item.label }}
         </a>
         {% endfor %}
