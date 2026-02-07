@@ -11,10 +11,12 @@ async function imageShortcode(src, alt, sizes = "100vw", classes = "", loading =
   }
 
   let metadata = await Image(inputPath, {
-    widths: [400, 800, 1200, 1600],
+    widths: [400, 800, 1200],
     formats: ["webp", "jpeg"],
     outputDir: "./_site/assets/images/optimized/",
     urlPath: "/assets/images/optimized/",
+    sharpWebpOptions: { quality: 70 },
+    sharpJpegOptions: { quality: 75 },
     filenameFormat: function (id, src, width, format) {
       const name = path.basename(src, path.extname(src));
       return `${name}-${width}w.${format}`;
