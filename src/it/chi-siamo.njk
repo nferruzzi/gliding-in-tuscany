@@ -1,0 +1,101 @@
+---
+layout: base.njk
+lang: it
+title: Chi Siamo - Gliding in Tuscany
+description: La storia di Antonello Budini Gattai, ex Comandante Alitalia, e la nascita dell'aeroagriturismo Gliding in Tuscany a Podere Sant'Apollonia.
+alternates:
+  it: /it/chi-siamo/
+  en: /en/
+  de: /de/
+---
+
+<section class="section-padding bg-gradient-to-br from-primary-50 to-blue-50">
+  <div class="container-custom">
+    <h1 class="text-5xl font-serif font-bold text-gray-900 mb-6">
+      Chi Siamo
+    </h1>
+    <p class="text-xl text-gray-700 max-w-3xl">
+      La passione per il volo che ha dato vita a Gliding in Tuscany
+    </p>
+  </div>
+</section>
+
+<section class="section-padding bg-white">
+  <div class="container-custom">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        <div class="md:col-span-1">
+          {% image "/assets/images/antonello-aereo.jpg", "Antonello Budini Gattai accanto all'aereo traino", "(max-width: 768px) 100vw, 33vw", "rounded-lg shadow-lg w-full aspect-[3/4] object-cover" %}
+        </div>
+
+        {# Intro bio #}
+        <div class="md:col-span-2 flex flex-col justify-center">
+          <h2 class="text-3xl font-serif font-bold text-gray-900 mb-6">
+            Antonello Budini Gattai
+          </h2>
+          <div class="prose prose-lg max-w-none text-gray-700">
+            <p class="mb-4">
+              L'aviosuperficie nasce dalla passione di <strong>Antonello Budini Gattai</strong>, già Comandante di Alitalia,
+              che da pensionato ha scelto di tornare nelle campagne di famiglia dove, quindicenne, faceva volare
+              i suoi aeromodelli.
+            </p>
+            <p>
+              Oggi questa visione vive in <strong>Gliding in Tuscany</strong>, l'agri-aeroturismo del podere Sant'Apollonia,
+              immerso nella Val di Chiana, a pochi minuti da Castiglion Fiorentino e Cortona. Qui natura,
+              ospitalità rurale e aviazione si incontrano in un luogo unico, dove una pista in erba tra i
+              girasoli accoglie piloti e appassionati da tutto il mondo.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+        <div class="prose prose-lg max-w-none text-gray-700">
+          <h3 class="text-2xl font-serif font-bold text-gray-900 mb-4">Una carriera tra le nuvole</h3>
+          <p class="mb-4">
+            Formatosi presso l'Aero Club di Firenze, Antonello iniziò la carriera professionale nel 1968
+            con la Società Aerea Mediterranea, volando per oltre trent'anni fino a diventare comandante Alitalia.
+          </p>
+          <p>
+            Parallelamente coltivò il volo sportivo e a vela, partecipando a competizioni e raduni
+            internazionali e ottenendo i massimi riconoscimenti della Federazione Aeronautica Internazionale.
+          </p>
+        </div>
+
+        {% image "/assets/images/antonello-storia.jpg", "Antonello Budini Gattai - il libretto di volo del 1963 e con un modello di aliante", "(max-width: 768px) 100vw, 50vw", "rounded-lg shadow-lg w-full object-cover" %}
+      </div>
+
+      <div class="prose prose-lg max-w-none text-gray-700 mb-12">
+        <h3 class="text-2xl font-serif font-bold text-gray-900 mb-4">Il ritorno in Toscana</h3>
+        <p>
+          Rientrato definitivamente in Toscana, ha riportato in vita il podere di famiglia trasformandolo
+          in un luogo dove si può vivere il paesaggio dall'alto e da terra: appartamenti ricavati nella
+          storica Leopoldina, attività di volo, eventi aeronautici e un'accoglienza autentica, guidata da
+          esperienza, discrezione e profondo amore per il territorio. Qui ogni ospite è invitato a scoprire
+          la Toscana con lo stesso spirito con cui Antonello continua, ancora oggi, a volare.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="relative section-padding bg-primary-700 text-white overflow-hidden">
+  {% image "/assets/images/panorama-180.jpg", "Panorama della Toscana", "100vw", "absolute inset-0 w-full h-full object-cover" %}
+  <div class="absolute inset-0 bg-gradient-to-r from-primary-900/70 via-primary-800/50 to-primary-700/30"></div>
+  <div class="relative container-custom text-center">
+    <h2 class="text-4xl font-serif font-bold mb-6">
+      Vieni a trovarci
+    </h2>
+    <p class="text-xl mb-8 text-white max-w-2xl mx-auto">
+      Scopri l'emozione del volo a vela e l'ospitalità toscana di Podere Sant'Apollonia.
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="/it/scuola-volo/" class="btn-primary bg-white hover:bg-gray-100 text-primary-700">
+        Attività di Volo
+      </a>
+      <a href="/it/contatti/" class="btn-primary bg-primary-800 hover:bg-primary-900 border-2 border-white">
+        Contattaci
+      </a>
+    </div>
+  </div>
+</section>

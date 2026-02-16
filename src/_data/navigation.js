@@ -5,6 +5,7 @@ module.exports = {
     { label: "Regalo Volo", url: "/it/regalo-volo/" },
     { label: "Agriturismo", url: "/it/agriturismo/" },
     { label: "Come raggiungerci", url: "/it/come-raggiungerci/" },
+    { label: "Chi Siamo", url: "/it/chi-siamo/" },
     { label: "Galleria", url: "/it/galleria/" },
     { label: "Contatti", url: "/it/contatti/" }
   ],
