@@ -15,6 +15,7 @@ module.exports = {
     { label: "Gift Flight", url: "/en/gift-flight/" },
     { label: "Farm Stay", url: "/en/farm-stay/" },
     { label: "How to reach us", url: "/en/how-to-reach-us/" },
+    { label: "About", url: "/en/about/" },
     { label: "Gallery", url: "/en/gallery/" },
     { label: "Contact", url: "/en/contact/" }
   ],
@@ -24,6 +25,7 @@ module.exports = {
     { label: "Geschenk Flug", url: "/de/geschenk-flug/" },
     { label: "Ferienwohnungen", url: "/de/bauernhof/" },
     { label: "Anreise", url: "/de/anreise/" },
+    { label: "Über uns", url: "/de/ueber-uns/" },
     { label: "Galerie", url: "/de/galerie/" },
     { label: "Kontakt", url: "/de/kontakt/" }
   ]
