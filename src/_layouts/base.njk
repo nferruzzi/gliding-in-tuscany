@@ -96,7 +96,18 @@
     "provider": {
       "@type": "LocalBusiness",
       "name": "Gliding in Tuscany - Aeroagriturismo Podere S.Apollonia",
-      "url": "{{ site.url }}"
+      "url": "{{ site.url }}",
+      "telephone": "{{ site.contact.phone }}",
+      "image": "{{ site.url }}/assets/images/og-image.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ site.contact.address.street }}",
+        "addressLocality": "{{ site.contact.address.city }}",
+        "addressRegion": "{{ site.contact.address.province }}",
+        "postalCode": "{{ site.contact.address.postalCode }}",
+        "addressCountry": "{{ site.contact.address.country }}"
+      },
+      "priceRange": "€€"
     },
     "areaServed": {
       "@type": "Place",
