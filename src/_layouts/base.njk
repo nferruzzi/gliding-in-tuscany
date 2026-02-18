@@ -61,6 +61,72 @@
   }
   </script>
 
+  {# BreadcrumbList JSON-LD #}
+  {% if breadcrumb %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "{{ site.url }}/{{ lang }}/"
+      }{% for crumb in breadcrumb %},
+      {
+        "@type": "ListItem",
+        "position": {{ loop.index + 1 }},
+        "name": "{{ crumb.name }}",
+        "item": "{{ site.url }}{{ crumb.url }}"
+      }{% endfor %}
+    ]
+  }
+  </script>
+  {% endif %}
+
+  {# Service JSON-LD per pagine volo #}
+  {% if serviceSchema %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Volo a Vela in Toscana",
+    "description": "Voli introduttivi in aliante sopra le colline della Toscana. Lancio col verricello e aerotraino con piloti istruttori esperti.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Gliding in Tuscany - Aeroagriturismo Podere S.Apollonia",
+      "url": "{{ site.url }}"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Toscana, Italia"
+    },
+    "serviceType": "Volo a Vela",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Lancio al Verricello",
+        "price": "30",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "name": "Volo Introduttivo 700m",
+        "price": "110",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "name": "Volo Introduttivo 1000m",
+        "price": "140",
+        "priceCurrency": "EUR"
+      }
+    ]
+  }
+  </script>
+  {% endif %}
+
   {# Favicon placeholder #}
   <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 
