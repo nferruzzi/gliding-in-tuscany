@@ -5,9 +5,9 @@ module.exports = {
     de: "Segelfliegen in der Toskana - Agriturismo mit Segelflug"
   },
   description: {
-    it: "Aeroagriturismo con attività di volo a vela in Toscana, zona Arezzo. Voli introduttivi nei weekend sopra le colline toscane. Regalo perfetto per gli appassionati di volo.",
+    it: "Aeroagriturismo con volo a vela in Toscana, zona Arezzo. Voli introduttivi nei weekend sopra le colline toscane. Regalo perfetto per gli appassionati.",
     en: "Aerial farm stay with gliding activities in Tuscany, Arezzo area. Weekend introductory flights above Tuscan hills. Perfect gift for flight enthusiasts.",
-    de: "Agriturismo mit Segelflugaktivitäten in der Toskana, Region Arezzo. Einführungsflüge am Wochenende über toskanische Hügel. Perfektes Geschenk für Flugbegeisterte."
+    de: "Agriturismo mit Segelflug in der Toskana, Region Arezzo. Einführungsflüge am Wochenende über toskanische Hügel. Perfektes Geschenk für Flugbegeisterte."
   },
   keywords: {
     it: "volo a vela toscana, agriturismo arezzo, scuola volo aliante, regalo volo aliante, gliding italy, volo a vela italia, corso volo a vela, esperienza volo toscana, aeroporto toscana, come arrivare in toscana, aviosuperficie toscana, regalo volo aliante toscana",

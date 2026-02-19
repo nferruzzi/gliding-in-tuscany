@@ -1,11 +1,12 @@
-# Redirect to HTTPS
 RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirect non-www to www
+# Redirect non-www to www (HTTP e HTTPS) - deve venire prima del redirect HTTPS
 RewriteCond %{HTTP_HOST} ^glidingintuscany\.it$ [NC]
 RewriteRule ^(.*)$ https://www.glidingintuscany.it/$1 [L,R=301]
+
+# Redirect HTTP to HTTPS (per le richieste già su www)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Redirect vecchie pagine del sito precedente
 RewriteRule ^index\.html$ /it/ [L,R=301]
