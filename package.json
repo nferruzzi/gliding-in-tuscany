@@ -7,7 +7,7 @@
     "css:watch": "tailwindcss -i ./src/css/style.css -o ./src/css/output.css --watch",
     "eleventy:build": "eleventy",
     "eleventy:serve": "eleventy --serve",
-    "build": "npm run css:build && npm run eleventy:build",
+    "build": "rm -rf _site && npm run css:build && npm run eleventy:build",
     "start": "npm run css:build && npm run eleventy:serve",
     "dev": "npm run start",
     "deploy": "lftp -u glidingftp,$(cat .ftppass) glidingintuscany.it -e 'set ssl:verify-certificate no; cd public_html; mirror -R --delete --exclude-glob .DS_Store _site/ .; quit'",
